@@ -1,0 +1,52 @@
+@font-face {
+  font-family: Poly;
+  src: url(Poly-Regular.ttf); }
+
+/* line 9, /Users/andrewgolightly/code/AngularJS/andrewgolightly/styles/ag.scss */
+body {
+  background-image: url('../images/yin-yang-bg.jpg');
+  color: whitesmoke;
+  font-family: 'Poly'; }
+
+/* line 15, /Users/andrewgolightly/code/AngularJS/andrewgolightly/styles/ag.scss */
+section.container {
+  margin-top: 33px; }
+
+/*
+a {
+    color: $primary-colour;
+}
+*/
+/* line 25, /Users/andrewgolightly/code/AngularJS/andrewgolightly/styles/ag.scss */
+img {
+  margin: 0 auto;
+  width: 254px; }
+
+/* line 30, /Users/andrewgolightly/code/AngularJS/andrewgolightly/styles/ag.scss */
+.jumbotron {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 44px;
+  margin-top: 22px; }
+  /* line 35, /Users/andrewgolightly/code/AngularJS/andrewgolightly/styles/ag.scss */
+  .jumbotron a {
+    color: whitesmoke; }
+  /* line 39, /Users/andrewgolightly/code/AngularJS/andrewgolightly/styles/ag.scss */
+  .jumbotron h1 {
+    font-size: 44px; }
+  /* line 43, /Users/andrewgolightly/code/AngularJS/andrewgolightly/styles/ag.scss */
+  .jumbotron p {
+    font-size: 18px; }
+  /* line 47, /Users/andrewgolightly/code/AngularJS/andrewgolightly/styles/ag.scss */
+  .jumbotron h3 a, .jumbotron p a {
+    text-decoration: none;
+    border-bottom: 1px dashed #92278F; }
+  /* line 52, /Users/andrewgolightly/code/AngularJS/andrewgolightly/styles/ag.scss */
+  .jumbotron a:hover {
+    color: #92278F;
+    text-decoration: none;
+    border-bottom: none; }
+  /* line 58, /Users/andrewgolightly/code/AngularJS/andrewgolightly/styles/ag.scss */
+  .jumbotron h3 a:hover {
+    text-shadow: 1px 1px 33px whitesmoke; }
+
+/*# sourceMappingURL=ag.css.map */

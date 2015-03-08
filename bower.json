@@ -1,0 +1,17 @@
+{
+  "name": "Andrew Golightly",
+  "version": "0.1.1",
+  "authors": [
+    "Andrew Golightly <andrew@golightlyplus.com>"
+  ],
+  "description": "Andrew Golightly's homepage",
+  "license": "MIT",
+  "homepage": "http://www.andrewgolightly.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,62 @@
+$primary-colour: whitesmoke;
+$secondary-colour: #92278F;
+
+@font-face {
+    font-family: Poly;
+    src: url(Poly-Regular.ttf);
+}
+
+body {
+    background-image: url('../images/yin-yang-bg.jpg');
+    color: $primary-colour;
+    font-family: 'Poly';
+}
+
+section.container {
+    margin-top: 33px;
+}
+
+/*
+a {
+    color: $primary-colour;
+}
+*/
+
+img {
+    margin: 0 auto;
+    width: 254px;
+}
+
+.jumbotron {
+    background-color: rgba(0,0,0,0.8);
+    padding-top: 44px;
+    margin-top: 22px;
+
+    a {
+        color: $primary-colour;
+    }
+    
+    h1 {
+     font-size: 44px;   
+    }
+    
+    p {
+        font-size: 18px;
+    }
+    
+    h3 a, p a {
+        text-decoration: none;
+        border-bottom: 1px dashed $secondary-colour;
+    }
+
+    a:hover {
+        color: $secondary-colour;
+        text-decoration: none;
+        border-bottom: none;
+    }
+    
+    h3 a:hover {
+        text-shadow: 1px 1px 33px $primary-colour;
+    }
+    
+}

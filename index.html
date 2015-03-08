@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="agApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Andrew Golightly - counsellor & web developer</title>
+        <meta name="description" content="Hi! My name is Andrew Golightly. I'm a web developer and counsellor. I travel extensively and do most of my work remotely. Get in touch!">
+        <meta name="keywords" content="Andrew, Golightly, web, developer, counselling, counsellor">
+        <meta name="author" content="Andrew Golightly">
+
+        <link rel="stylesheet" href="dist/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/ag.css">
+        <link rel="stylesheet" href="dist/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="images/yin-yang.png">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+    </head>
+    <body ng-controller="AgCtrl">
+        <section class="container text-center row center-block">
+            <div class="col-md-6 col-md-offset-3">
+                
+                <div class="jumbotron">
+                    <img src="images/Andrew-Golightly.jpg" class="img-thumbnail img-responsive">
+                    <h1>Andrew Golightly</h1>
+                    <h3><a href="http://www.golightlyplus.com">web developer</a> and <a href="http://www.goforself.me">counsellor</a></h3>
+                    <br>
+                    <p>I'm currently near <a href="https://www.google.com/maps/place/Sydney+NSW,+Australia/@-33.7969235,150.9224326,5z/data=!4m2!3m1!1s0x6b129838f39a743f:0x3017d681632a850">Sydney, Australia</a>.<br>To find a time to chat for your timezone, <a href="http://www.worldtimebuddy.com/?pl=1&lid=2147714&h=2147714">click here</a>.</p>
+                    <span ng-repeat="agSocialNetwork in agSocialNetworks">
+                        <social-network agSocialNetwork='agSocialNetwork'></social-network>
+                    </span>
+                </div>
+            </div>
+
+        </section>
+
+        <script src="dist/angular.min.js"></script>
+        <script src="scripts/ag.js"></script>
+    </body>
+</html>
