@@ -1,0 +1,9 @@
+{
+    "path": {
+        "styles/ag.scss": {
+            "sass.options": {
+                "outputDir": "../dist/css/"
+            }
+        }
+    }
+}

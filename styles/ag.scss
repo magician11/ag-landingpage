@@ -1,15 +1,10 @@
 $primary-colour: whitesmoke;
 $secondary-colour: #92278F;
 
-@font-face {
-    font-family: Poly;
-    src: url(Poly-Regular.ttf);
-}
-
 body {
-    background-image: url('../images/yin-yang-bg.jpg');
+    background-image: url('http://res.cloudinary.com/go-for-self/image/upload/v1429081313/yin-yang-bg.jpg');
     color: $primary-colour;
-    font-family: 'Poly';
+    font-family: 'Averia Sans Libre', cursive;
 }
 
 section.container {
