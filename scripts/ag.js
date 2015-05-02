@@ -12,8 +12,16 @@ agApp.controller('AgCtrl', function($scope) {
 
 
 agApp.directive('socialNetwork', function() {
-    
+
     return {
         templateUrl: 'social-network.html'
     };
 });
+
+var egg = new Egg('babyandrew'.split('').toString(), function() {
+
+    $('.jumbotron img').fadeOut('xslow', function() {
+        $(this).attr('src','http://res.cloudinary.com/go-for-self/image/upload/c_scale,h_333/c_crop,h_333,w_333/v1430585072/Andrew%20Meditating.jpg').fadeIn();
+    }); 
+
+}).listen();
