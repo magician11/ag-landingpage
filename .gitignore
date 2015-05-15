@@ -2,3 +2,4 @@
 bower_components/
 dist/
 styles/ag.css*
+node_modules/

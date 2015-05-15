@@ -33,7 +33,7 @@
                     <br>
                     <p>I <a href="https://www.google.com/maps/d/u/0/viewer?mid=zmW9LBx7kMIs.kVJgCq0vfnBg">travel a lot</a> and I'm currently near <a href="https://goo.gl/maps/BSoUb">Monument, Colorado, USA</a>.<br>To find a time to chat for your timezone, <a href="http://www.worldtimebuddy.com/?pl=1&lid=5419384&h=5419384">click here</a>!</p>
                     <h4><a href="mailto:support@andrewgolightly.com" title="Email Andrew Golightly">support@andrewgolightly.com</a></h4>
-                    <span ng-repeat="agSocialNetwork in agSocialNetworks">
+                    <span ng-repeat="agSocialNetwork in agSocialNetworks | filter:search" class="ag-social-network">
                         <social-network agSocialNetwork='agSocialNetwork'></social-network>
                     </span>
                 </div>
@@ -44,6 +44,7 @@
         <script src="https://cdn.rawgit.com/mikeflynn/egg.js/master/egg.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
         <script src="dist/js/angular.min.js"></script>
+        <script src="dist/js/angular-animate.min.js"></script>
         <script src="scripts/ag.js"></script>
     </body>
 </html>

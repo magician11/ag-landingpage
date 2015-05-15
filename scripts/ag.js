@@ -1,13 +1,15 @@
-var agApp = angular.module('agApp', []);
+var agApp = angular.module('agApp', ['ngAnimate']);
 
-agApp.controller('AgCtrl', function($scope) {
+agApp.controller('AgCtrl', function($scope, $timeout) {
 
-    $scope.agSocialNetworks = [
-        {icon: 'facebook', link: 'http://facebook.com/andrewgolightly11'}, 
-        {icon: 'twitter', link: 'http://twitter.com/AndrewGolightly'},
-        {icon: 'google-plus', link: 'https://plus.google.com/+AndrewGolightly/posts'},
-        {icon: 'github', link: 'https://github.com/magician11/'}
-    ];
+    $timeout(function() {
+        $scope.agSocialNetworks = [
+            {icon: 'facebook', link: 'http://facebook.com/andrewgolightly11'}, 
+            {icon: 'twitter', link: 'http://twitter.com/AndrewGolightly'},
+            {icon: 'google-plus', link: 'https://plus.google.com/+AndrewGolightly/posts'},
+            {icon: 'github', link: 'https://github.com/magician11/'}
+        ];
+    }, 800);
 });
 
 

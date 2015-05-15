@@ -1,0 +1,13 @@
+{
+    "name": "andrew-golightly",
+    "version": "0.1.2",
+    "author": "Andrew Golightly <support@andrewgolightly.com>",
+    "description": "Andrew Golightly's landingpage",
+    "engines": {
+        "node": ">=0.12"
+    },
+    "dependencies": {
+        "gulp": ">=3.8.11",
+        "gulp-sass": ">=1.3.3"
+    }
+}

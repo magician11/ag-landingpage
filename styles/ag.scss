@@ -20,19 +20,20 @@ img {
     background-color: rgba(0,0,0,0.8);
     padding-top: 44px;
     margin-top: 22px;
+    min-height: 621px;
 
     a {
         color: $primary-colour;
     }
-    
+
     h1 {
-     font-size: 44px;   
+        font-size: 44px;   
     }
-    
+
     p {
         font-size: 18px;
     }
-    
+
     h3 a, p a {
         text-decoration: none;
         border-bottom: 1px dashed $secondary-colour;
@@ -43,9 +44,23 @@ img {
         text-decoration: none;
         border-bottom: none;
     }
-    
+
     h3 a:hover {
         text-shadow: 1px 1px 33px $primary-colour;
     }
+
+}
+
+.ag-social-network.ng-enter {
     
+    transition: all linear 1s;
+    -webkit-transition: all linear 1s;
+    
+    transform: scale(0.3);
+    opacity: 0;
+}
+
+.ag-social-network.ng-enter.ng-enter-active {
+    transform: scale(1);
+    opacity: 1;
 }
