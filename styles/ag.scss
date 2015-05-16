@@ -55,11 +55,11 @@ img {
 
 @import "animations.scss";
 
-.profilePicTransition.ng-hide-remove.ng-hide-remove-active {
-    @include vendor-prefixes(animation, 'profilePicTransition 3s');
+.profile-pic-transition.ng-hide-remove.ng-hide-remove-active {
+    @include vendor-prefixes(animation, 'flyIn 3s');
 }
 
-@include keyframes(profilePicTransition) {
+@include keyframes(flyIn) {
 
     0% {
         opacity: 0;
