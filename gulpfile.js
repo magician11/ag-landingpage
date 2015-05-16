@@ -5,6 +5,7 @@
 
 var gulp = require('gulp');
 var scss = require('gulp-sass');
+var bourbon = require('node-bourbon').includePaths;
 
 /**
  * Tasks
@@ -19,7 +20,10 @@ var scss = require('gulp-sass');
  */
 gulp.task('scss', function() {
     return gulp.src('styles/ag.scss')
-    .pipe(scss({errLogToConsole: true}))
+    .pipe(scss({
+        errLogToConsole: true,
+        includePaths: ['styles'].concat(bourbon)
+    }))
     .pipe(gulp.dest('dist/css'));
 });
 

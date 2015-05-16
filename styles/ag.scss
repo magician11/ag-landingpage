@@ -53,26 +53,26 @@ img {
 
 /* animate profile pic */
 
-@import "animations.scss";
+@import "bourbon";
 
 .profile-pic-transition.ng-hide-remove.ng-hide-remove-active {
-    @include vendor-prefixes(animation, 'flyIn 3s');
+    @include animation(flyIn 3s);
 }
 
 @include keyframes(flyIn) {
 
     0% {
         opacity: 0;
-        @include vendor-prefixes(transform, 'scale(0, 0)');
+        @include transform(scale(0, 0));
     }
 
     80% {
         opacity: 0.8;
-        @include vendor-prefixes(transform, 'scale(1.1, 1.1)');
+        @include transform(scale(1.1, 1.1));
     }
 
     100% {
         opacity: 1;
-        @include vendor-prefixes(transform, 'scale(1, 1)');
+        @include transform(scale(1, 1));
     }
 }
