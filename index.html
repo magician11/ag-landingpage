@@ -27,7 +27,9 @@
             <div class="col-md-8 col-md-offset-2">
 
                 <div class="jumbotron">
-                    <img src="http://res.cloudinary.com/go-for-self/image/upload/Andrew-Golightly-profile.jpg" class="img-thumbnail img-responsive">
+                    <img ng-show="ag.showProfilePic" src="http://res.cloudinary.com/go-for-self/image/upload/Andrew-Golightly-profile.jpg" class="img-thumbnail img-responsive profilePicTransition">
+
+                    <!--<img ng-egg keycode="a,n,d,r,e,w" ng-model="ag.showEgg" src="http://res.cloudinary.com/go-for-self/image/upload/c_scale,h_333/c_crop,h_333,w_333/v1430585072/Andrew%20Meditating.jpg" class="img-thumbnail img-responsive">-->
                     <h1>Andrew Golightly</h1>
                     <h3><a href="http://www.golightlyplus.com">web developer</a> and <a href="http://www.goforself.me">counsellor</a></h3>
                     <br>
@@ -41,10 +43,9 @@
 
         </section>
 
-        <script src="https://cdn.rawgit.com/mikeflynn/egg.js/master/egg.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
         <script src="dist/js/angular.min.js"></script>
         <script src="dist/js/angular-animate.min.js"></script>
+        <!--        <script src="dist/js/angular-egg.min.js"></script> -->
         <script src="scripts/ag.js"></script>
     </body>
 </html>

@@ -51,16 +51,28 @@ img {
 
 }
 
-.ag-social-network.ng-enter {
-    
-    transition: all linear 1s;
-    -webkit-transition: all linear 1s;
-    
-    transform: scale(0.3);
-    opacity: 0;
+/* animate profile pic */
+
+@import "animations.scss";
+
+.profilePicTransition.ng-hide-remove.ng-hide-remove-active {
+    @include vendor-prefixes(animation, 'profilePicTransition 3s');
 }
 
-.ag-social-network.ng-enter.ng-enter-active {
-    transform: scale(1);
-    opacity: 1;
+@include keyframes(profilePicTransition) {
+
+    0% {
+        opacity: 0;
+        @include vendor-prefixes(transform, 'scale(0, 0)');
+    }
+
+    80% {
+        opacity: 0.8;
+        @include vendor-prefixes(transform, 'scale(1.1, 1.1)');
+    }
+
+    100% {
+        opacity: 1;
+        @include vendor-prefixes(transform, 'scale(1, 1)');
+    }
 }
