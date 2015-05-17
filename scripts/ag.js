@@ -3,13 +3,15 @@ var agApp = angular.module('agApp', ['ngAnimate']);
 agApp.controller('AgCtrl', function($scope, $timeout) {
 
     $scope.ag = {
-        profilePicBaby: 'http://res.cloudinary.com/go-for-self/image/upload/c_scale,h_333/c_crop,h_333,w_333/v1430585072/Andrew%20Meditating.jpg'
+        profilePic: 'http://res.cloudinary.com/go-for-self/image/upload/Andrew-Golightly-profile.jpg',
+        profilePicBaby: 'http://res.cloudinary.com/go-for-self/image/upload/c_scale,h_333/c_crop,h_333,w_333/v1430585072/Andrew%20Meditating.jpg',
+        showProfilePic: false
     };
 
     // create a slight delay as a workaround for animation to work on page load
     $timeout(function() {
-        $scope.ag.profilePic = 'http://res.cloudinary.com/go-for-self/image/upload/Andrew-Golightly-profile.jpg';
-    },800);
+        $scope.ag.showProfilePic = true;
+    },1100);
 
     $scope.ag.socialNetworks = [
         {icon: 'facebook', link: 'http://facebook.com/andrewgolightly11'}, 

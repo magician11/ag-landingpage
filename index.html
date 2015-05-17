@@ -22,13 +22,13 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
     </head>
-    <body ng-controller="AgCtrl">
+    <body ng-controller="AgCtrl" ng-cloak>
         <section class="container text-center row center-block">
             <div class="col-md-8 col-md-offset-2">
 
                 <div class="jumbotron">
                     <div class="ag-profile-pic-container">
-                        <div ng-show="ag.profilePic" class="ag-profile-pic">
+                        <div ng-show="ag.showProfilePic" class="ag-profile-pic">
                             <div class="ag-profile-pic-side">
                                 <img ng-src="{{ag.profilePic}}" class="img-thumbnail img-responsive">
                             </div>
