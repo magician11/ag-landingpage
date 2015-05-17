@@ -1,29 +1,34 @@
-var agApp = angular.module('agApp', ['ngAnimate']);
+(function() {
 
-agApp.controller('AgCtrl', function($scope, $timeout) {
+    "use strict";
 
-    $scope.ag = {
-        profilePic: 'http://res.cloudinary.com/go-for-self/image/upload/Andrew-Golightly-profile.jpg',
-        profilePicBaby: 'http://res.cloudinary.com/go-for-self/image/upload/c_scale,h_333/c_crop,h_333,w_333/v1430585072/Andrew%20Meditating.jpg',
-        showProfilePic: false
-    };
+    var agApp = angular.module('agApp', ['ngAnimate']);
 
-    // create a slight delay as a workaround for animation to work on page load
-    $timeout(function() {
-        $scope.ag.showProfilePic = true;
-    },1100);
+    agApp.controller('AgCtrl', function($scope, $timeout) {
 
-    $scope.ag.socialNetworks = [
-        {icon: 'facebook', link: 'http://facebook.com/andrewgolightly11'}, 
-        {icon: 'twitter', link: 'http://twitter.com/AndrewGolightly'},
-        {icon: 'google-plus', link: 'https://plus.google.com/+AndrewGolightly/posts'},
-        {icon: 'github', link: 'https://github.com/magician11/'}
-    ];
-});
+        var vm = this;
 
-agApp.directive('socialNetwork', function() {
+        vm.profilePic = 'http://res.cloudinary.com/go-for-self/image/upload/Andrew-Golightly-profile.jpg';
+        vm.profilePicBaby = 'http://res.cloudinary.com/go-for-self/image/upload/c_scale,h_333/c_crop,h_333,w_333/v1430585072/Andrew%20Meditating.jpg';
+        vm.showProfilePic = false;
 
-    return {
-        templateUrl: 'social-network.html'
-    };
-});
+        // create a slight delay as a workaround for animation to work on page load
+        $timeout(function() {
+            vm.showProfilePic = true;
+        },1100);
+
+        vm.socialNetworks = [
+            {icon: 'facebook', link: 'http://facebook.com/andrewgolightly11'}, 
+            {icon: 'twitter', link: 'http://twitter.com/AndrewGolightly'},
+            {icon: 'google-plus', link: 'https://plus.google.com/+AndrewGolightly/posts'},
+            {icon: 'github', link: 'https://github.com/magician11/'}
+        ];
+    });
+
+    agApp.directive('socialNetwork', function() {
+
+        return {
+            templateUrl: 'social-network.html'
+        };
+    });
+}());

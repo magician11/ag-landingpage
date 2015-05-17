@@ -1,3 +1,5 @@
+@import "bourbon";
+
 $primary-colour: whitesmoke;
 $secondary-colour: #92278F;
 
@@ -15,7 +17,6 @@ section.container {
     background-color: rgba(0,0,0,0.8);
     padding-top: 44px;
     margin-top: 22px;
-    min-height: 621px;
 
     a {
         color: $primary-colour;
@@ -46,10 +47,23 @@ section.container {
 
 }
 
-/* animate profile pic */
-/* ------------------- */
+/* animate hovering over social media icons */
+.ag-social-network {
+    @include transition(all 0.3s linear);
+    display: inline-block;
+}
 
-@import "bourbon";
+.ag-social-network a {
+    @include transition(color 0.3s linear);
+}
+
+.ag-social-network:hover {
+    @include transform(scale(1.1));
+}
+
+
+/* start: animate profile pic */
+/* ----------------------------------------------------------- */
 
 /* flip image to show young Andrew :) */
 
@@ -106,3 +120,5 @@ section.container {
         @include transform(scale(1, 1));
     }
 }
+/* end: animate profile pic */
+/* ----------------------------------------------------------- */
