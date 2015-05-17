@@ -11,11 +11,6 @@ section.container {
     margin-top: 33px;
 }
 
-img {
-    margin: 0 auto;
-    width: 254px;
-}
-
 .jumbotron {
     background-color: rgba(0,0,0,0.8);
     padding-top: 44px;
@@ -51,11 +46,19 @@ img {
 
 }
 
-/* animate profile pic */
+/* animate profile pic on page load */
 
 @import "bourbon";
 
-.profile-pic-transition.ng-hide-remove.ng-hide-remove-active {
+.ag-profile-pic-container {
+    height: 254px;
+    perspective: 600;
+    position: relative;
+    width: 254px;
+    margin: 0 auto;
+}
+
+.ag-profile-pic.ng-hide-remove.ng-hide-remove-active {
     @include animation(flyIn 3s);
 }
 
