@@ -46,18 +46,45 @@ section.container {
 
 }
 
-/* animate profile pic on page load */
+/* animate profile pic */
+/* ------------------- */
 
 @import "bourbon";
 
+/* flip image to show young Andrew :) */
+
 .ag-profile-pic-container {
     height: 254px;
-    perspective: 600;
+    @include perspective(600);
     position: relative;
     width: 254px;
     margin: 0 auto;
 }
 
+.ag-profile-pic {
+    height: 100%;
+    position: absolute;
+    @include transform-style(preserve-3d);
+    @include transition(all 1s ease-in-out);
+    width: 100%;
+}
+
+.ag-profile-pic:hover {
+    @include transform(rotateY(180deg));
+}
+
+.ag-profile-pic .ag-profile-pic-side {
+    @include backface-visibility(hidden);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.ag-profile-pic .ag-profile-pic-side-back {
+    @include transform(rotateY(180deg));
+}
+
+/* flyIn on page load */
 .ag-profile-pic.ng-hide-remove.ng-hide-remove-active {
     @include animation(flyIn 3s);
 }

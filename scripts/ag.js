@@ -2,7 +2,9 @@ var agApp = angular.module('agApp', ['ngAnimate']);
 
 agApp.controller('AgCtrl', function($scope, $timeout) {
 
-    $scope.ag = {};
+    $scope.ag = {
+        profilePicBaby: 'http://res.cloudinary.com/go-for-self/image/upload/c_scale,h_333/c_crop,h_333,w_333/v1430585072/Andrew%20Meditating.jpg'
+    };
 
     // create a slight delay as a workaround for animation to work on page load
     $timeout(function() {
