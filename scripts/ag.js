@@ -18,10 +18,11 @@
         },1100);
 
         vm.socialNetworks = [
-            {icon: 'facebook', link: 'http://facebook.com/andrewgolightly11'}, 
-            {icon: 'twitter', link: 'http://twitter.com/AndrewGolightly'},
-            {icon: 'google-plus', link: 'https://plus.google.com/+AndrewGolightly/posts'},
-            {icon: 'github', link: 'https://github.com/magician11/'}
+            {icon: 'facebook', link: 'http://facebook.com/andrewgolightly11', name: 'Facebook'}, 
+            {icon: 'twitter', link: 'http://twitter.com/AndrewGolightly', name: 'Twitter'},
+            {icon: 'google-plus', link: 'https://plus.google.com/+AndrewGolightly/posts', name: 'Google+'},
+            {icon: 'github', link: 'https://github.com/magician11/', name: 'GitHub'},
+            {icon: 'soundcloud', link: 'https://soundcloud.com/magician11', name: 'SoundCloud'}
         ];
     });
 
