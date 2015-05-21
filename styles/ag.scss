@@ -1,12 +1,13 @@
 @import "bourbon";
 
 $primary-colour: whitesmoke;
-$secondary-colour: #92278F;
+$link-colour: #3498DB;
 
 body {
     background-image: url('http://res.cloudinary.com/go-for-self/image/upload/v1429081313/yin-yang-bg.jpg');
     color: $primary-colour;
     font-family: 'Averia Sans Libre', cursive;
+    text-shadow: 1px 3px 8px #000;
 }
 
 section.container {
@@ -37,19 +38,15 @@ section.container {
 
     h3 a, p a {
         text-decoration: none;
-        border-bottom: 1px dashed $secondary-colour;
+        color: $link-colour;
     }
 
     a:hover {
-        color: $secondary-colour;
-        text-decoration: none;
+        text-decoration: underline;
+        color: $primary-colour;
         border-bottom: none;
-    }
-
-    h3 a:hover {
         text-shadow: 1px 1px 33px $primary-colour;
     }
-
 }
 
 /* animate hovering over social media icons */
