@@ -1,4 +1,7 @@
-// get gulp and the plugins we need for this app
+// ===============================================================================
+// Setup gulp, plugins and global variables
+// ===============================================================================
+
 var gulp = require('gulp');
 var scss = require('gulp-sass');
 var bourbon = require('node-bourbon');
@@ -17,6 +20,15 @@ var paths = {
     html: src + '/*.html',
     bower: './bower_components'
 };
+
+// end: setup gulp, plugins and variables
+// ===============================================================================
+
+// ===============================================================================
+// Build the app into the dist directory
+// ===============================================================================
+
+gulp.task('build-dist', ['vendor', 'scss', 'scripts', 'html']);
 
 // copy across vendor files
 gulp.task('vendor', function() {
@@ -49,23 +61,6 @@ gulp.task('scss', function() {
         .pipe(gulp.dest(dist + '/css'));
 });
 
-// copy across our html files
-gulp.task('html', function() {
-
-    return gulp.src(paths.html)
-        .pipe(gulp.dest(dist));
-
-});
-
-// setup our webserver
-gulp.task('webserver', function() {
-    gulp.src(dist)
-        .pipe(webserver({
-        livereload: true,
-        open: true
-    }));
-});
-
 // quality check our JS, minify and copy to dist
 gulp.task('scripts', function() {
     return gulp.src(paths.js)
@@ -76,6 +71,30 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest(dist));
 });
 
+// copy across our html files
+gulp.task('html', function() {
+
+    return gulp.src(paths.html)
+        .pipe(gulp.dest(dist));
+
+});
+
+// end: build app into dist directory
+// ===============================================================================
+
+// ===============================================================================
+// Setup webserver, watch task and default gulp task
+// ===============================================================================
+
+// setup our webserver
+gulp.task('webserver', ['build-dist'], function() {
+    gulp.src(dist)
+        .pipe(webserver({
+        livereload: true,
+        open: true
+    }));
+});
+
 // watch our files for changes
 gulp.task('watch', function() {
     gulp.watch(paths.scss, ['scss']);
@@ -84,4 +103,7 @@ gulp.task('watch', function() {
 });
 
 // run our tasks on running 'gulp' from the command line
-gulp.task('default', ['scss', 'scripts', 'html', 'vendor', 'watch', 'webserver']);
+gulp.task('default', ['build-dist', 'watch', 'webserver']);
+
+// end: setup webserver, watch task and default gulp task
+// ===============================================================================
