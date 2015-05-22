@@ -1,12 +1,17 @@
+// import our external SCSS libraries
 @import "bourbon";
+//@import "bootstrap";
+//@import "font-awesome";
 
-$primary-colour: whitesmoke;
+// set our global variables
+$font-family-base: 'Averia Sans Libre', cursive ;
+$primary-colour: #F5F5F5;
 $link-colour: #3498DB;
 
 body {
     background-image: url('http://res.cloudinary.com/go-for-self/image/upload/v1429081313/yin-yang-bg.jpg');
     color: $primary-colour;
-    font-family: 'Averia Sans Libre', cursive;
+    font-family: $font-family-base;
     text-shadow: 1px 3px 8px #000;
 }
 
