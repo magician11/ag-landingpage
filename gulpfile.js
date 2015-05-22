@@ -28,7 +28,11 @@ gulp.task('vendor', function() {
     gulp.src(paths.bower + '/fontawesome/fonts/*')
         .pipe(gulp.dest(dist + '/fonts'));
 
-    // TODO: get all JS
+    // get all JS
+    var vendorJS = [paths.bower + '/angular/angular.min.js', paths.bower + '/angular-animate/angular-animate.min.js'];
+    gulp.src(vendorJS)
+        .pipe(gulp.dest(dist + '/js'));
+
 });
 
 // setup our Sass compilation task
@@ -76,4 +80,4 @@ gulp.task('watch', function() {
 });
 
 // run our tasks on running 'gulp' from the command line
-gulp.task('default', ['webserver', 'scss', 'scripts', 'html', 'vendor', 'watch']);
+gulp.task('default', ['scss', 'scripts', 'html', 'vendor', 'watch', 'webserver']);
