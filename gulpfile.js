@@ -1,9 +1,11 @@
-// get gulp and the plugins we need for it
+// get gulp and the plugins we need for this app
 var gulp = require('gulp');
 var scss = require('gulp-sass');
 var bourbon = require('node-bourbon');
 var webserver = require('gulp-webserver');
 var jshint = require('gulp-jshint');
+var uglify = require('gulp-uglify');
+var ngAnnotate = require('gulp-ng-annotate');
 
 // set our paths
 var src = 'app';
@@ -64,11 +66,13 @@ gulp.task('webserver', function() {
     }));
 });
 
-// quality check our JS and copy to dist
+// quality check our JS, minify and copy to dist
 gulp.task('scripts', function() {
     return gulp.src(paths.js)
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
+        .pipe(ngAnnotate())
+        .pipe(uglify())
         .pipe(gulp.dest(dist));
 });
 
