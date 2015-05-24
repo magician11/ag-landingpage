@@ -1,27 +1,45 @@
+
 // ===============================================================================
 // Setup gulp, plugins and global variables
 // ===============================================================================
 
 var gulp = require('gulp');
 var scss = require('gulp-sass');
-var bourbon = require('node-bourbon');
 var webserver = require('gulp-webserver');
 var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
 var ngAnnotate = require('gulp-ng-annotate');
-
-// set our paths
-var src = 'app';
-var assets = 'assets';
-var dist = 'dist';
-var paths = {
-    js: src + '/*.js',
-    scss: assets + '/css/*.scss',
-    html: src + '/*.html',
-    bower: './bower_components'
-};
+var concat = require('gulp-concat');
+var minifyCSS = require('gulp-minify-css');
+var autoprefix = require('gulp-autoprefixer');
 
 // end: setup gulp, plugins and variables
+// ===============================================================================
+
+// ========================================
+// Location of app directories and files
+// ========================================
+
+// directories
+var appDirectory = {
+    src: 'app',
+    assets: 'assets',
+    dist: 'dist',
+    bower: 'bower_components'
+};
+
+// files
+var appFiles = {
+    js: appDirectory.src + '/*.js',
+    scss: [appDirectory.assets + '/css/*.scss', appDirectory.assets + '/egg/*.css'],
+    html: [appDirectory.src + '/*.html', appDirectory.assets + '/egg/*.html'],
+    vendorCSS: [appDirectory.bower + '/bootstrap/dist/css/bootstrap.min.css', appDirectory.bower + '/fontawesome/css/font-awesome.min.css'],
+    fontAwesome: appDirectory.bower + '/fontawesome/fonts/*',
+    vendorJS: [appDirectory.bower + '/angular/angular.min.js', appDirectory.bower + '/angular-animate/angular-animate.min.js',
+               appDirectory.bower + '/angular-egg/release/angular-egg.min.js']
+};
+
+// end: location of directories and files
 // ===============================================================================
 
 // ===============================================================================
@@ -34,48 +52,49 @@ gulp.task('build-dist', ['vendor', 'scss', 'scripts', 'html']);
 gulp.task('vendor', function() {
 
     // get all minified CSS files
-    var vendorCss = [paths.bower + '/bootstrap/dist/css/bootstrap.min.css', paths.bower + '/fontawesome/css/font-awesome.min.css'];
-    gulp.src(vendorCss)
-        .pipe(gulp.dest(dist + '/css'));
+    gulp.src(appFiles.vendorCSS)
+        .pipe(concat('vendor.min.css'))
+        .pipe(gulp.dest(appDirectory.dist + '/css'));
 
     // get fonts
-    gulp.src(paths.bower + '/fontawesome/fonts/*')
-        .pipe(gulp.dest(dist + '/fonts'));
+    gulp.src(appFiles.fontAwesome)
+        .pipe(gulp.dest(appDirectory.dist + '/fonts'));
 
     // get all JS
-    var vendorJS = [paths.bower + '/angular/angular.min.js', paths.bower + '/angular-animate/angular-animate.min.js'];
-    gulp.src(vendorJS)
-        .pipe(gulp.dest(dist + '/js'));
+    gulp.src(appFiles.vendorJS)
+        .pipe(concat('vendor.min.js'))
+        .pipe(gulp.dest(appDirectory.dist + '/js'));
 
 });
 
-// setup our Sass compilation task
+// process our Sass and CSS
 gulp.task('scss', function() {
-    return gulp.src(paths.scss)
+    return gulp.src(appFiles.scss)
         .pipe(scss({
-        errLogToConsole: true,
-        includePaths: [
-            bourbon.includePaths
-        ]
+        errLogToConsole: true
     }))
-        .pipe(gulp.dest(dist + '/css'));
+        .pipe(autoprefix())
+        .pipe(minifyCSS())
+        .pipe(concat('ag.min.css'))
+        .pipe(gulp.dest(appDirectory.dist + '/css'));
 });
 
 // quality check our JS, minify and copy to dist
 gulp.task('scripts', function() {
-    return gulp.src(paths.js)
+    return gulp.src(appFiles.js)
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(ngAnnotate())
         .pipe(uglify())
-        .pipe(gulp.dest(dist));
+        .pipe(concat('ag.min.js'))
+        .pipe(gulp.dest(appDirectory.dist + '/js'));
 });
 
 // copy across our html files
 gulp.task('html', function() {
 
-    return gulp.src(paths.html)
-        .pipe(gulp.dest(dist));
+    return gulp.src(appFiles.html)
+        .pipe(gulp.dest(appDirectory.dist));
 
 });
 
@@ -88,7 +107,7 @@ gulp.task('html', function() {
 
 // setup our webserver
 gulp.task('webserver', ['build-dist'], function() {
-    gulp.src(dist)
+    gulp.src(appDirectory.dist)
         .pipe(webserver({
         livereload: true,
         open: true
@@ -97,9 +116,9 @@ gulp.task('webserver', ['build-dist'], function() {
 
 // watch our files for changes
 gulp.task('watch', function() {
-    gulp.watch(paths.scss, ['scss']);
-    gulp.watch(paths.js, ['scripts']);
-    gulp.watch(paths.html, ['html']);
+    gulp.watch(appFiles.scss, ['scss']);
+    gulp.watch(appFiles.js, ['scripts']);
+    gulp.watch(appFiles.html, ['html']);
 });
 
 // run our tasks on running 'gulp' from the command line

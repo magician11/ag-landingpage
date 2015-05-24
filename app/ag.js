@@ -2,7 +2,7 @@
 
     "use strict";
 
-    var agApp = angular.module('agApp', ['ngAnimate']);
+    var agApp = angular.module('agApp', ['ngAnimate', 'ngEgg']);
 
     agApp.controller('AgCtrl', function($scope, $timeout) {
 
@@ -10,9 +10,16 @@
 
         vm.profilePic = 'http://res.cloudinary.com/go-for-self/image/upload/Andrew-Golightly-profile.jpg';
         vm.profilePicBaby = 'http://res.cloudinary.com/go-for-self/image/upload/c_scale,h_333/c_crop,h_333,w_333/v1430585072/Andrew%20Meditating.jpg';
-        vm.showProfilePic = false;
-
+        
+        /* todo add these details in this controller
+        vm.agEgg = {
+            src: 'planets.html',
+            keycode: 'planets'.split('').toString()
+        };
+        */
+        
         // create a slight delay as a workaround for animation to work on page load
+        vm.showProfilePic = false;
         $timeout(function() {
             vm.showProfilePic = true;
         },1100);

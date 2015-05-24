@@ -9,9 +9,8 @@
         <meta name="keywords" content="Andrew, Golightly, web, developer, counselling, counsellor">
         <meta name="author" content="Andrew Golightly">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/ag.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/vendor.min.css">
+        <link rel="stylesheet" href="css/ag.min.css">
         <link rel="shortcut icon" href="http://res.cloudinary.com/go-for-self/image/upload/yin-yang.png">
         <link href='http://fonts.googleapis.com/css?family=Averia+Sans+Libre' rel='stylesheet' type='text/css'>
 
@@ -23,9 +22,11 @@
 <![endif]-->
     </head>
     <body ng-controller="AgCtrl as ag" ng-cloak>
+        <section data-ng-egg data-ng-model="ag.eggActivated" data-keycode="p,l,a,n,e,t,s">
+            <ng-include src="'planets.html'"></ng-include>
+        </section>
         <section class="container text-center row center-block">
             <div class="col-md-8 col-md-offset-2 col-xs-12">
-
                 <div class="jumbotron">
                     <div class="ag-profile-pic-container">
                         <div ng-show="ag.showProfilePic" class="ag-profile-pic">
@@ -51,8 +52,7 @@
 
         </section>
 
-        <script src="js/angular.min.js"></script>
-        <script src="js/angular-animate.min.js"></script>
-        <script src="ag.js"></script>
+        <script src="js/vendor.min.js"></script>
+        <script src="js/ag.min.js"></script>
     </body>
 </html>
