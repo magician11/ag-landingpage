@@ -12,6 +12,7 @@ var ngAnnotate = require('gulp-ng-annotate');
 var concat = require('gulp-concat');
 var minifyCSS = require('gulp-minify-css');
 var autoprefix = require('gulp-autoprefixer');
+var clean = require('del');
 
 // end: setup gulp, plugins and variables
 // ===============================================================================
@@ -102,7 +103,7 @@ gulp.task('html', function() {
 // ===============================================================================
 
 // ===============================================================================
-// Setup webserver, watch task and default gulp task
+// Setup webserver, watch task, clean task and default gulp task
 // ===============================================================================
 
 // setup our webserver
@@ -112,6 +113,10 @@ gulp.task('webserver', ['build-dist'], function() {
         livereload: true,
         open: true
     }));
+});
+
+gulp.task('clean', function(cb) {
+    clean([appDirectory.dist]);
 });
 
 // watch our files for changes
