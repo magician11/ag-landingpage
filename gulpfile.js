@@ -26,18 +26,19 @@ var appDirectory = {
     src: 'app',
     assets: 'assets',
     dist: 'dist',
-    bower: 'bower_components'
+    npmDir: 'node_modules'
 };
 
 // files
 var appFiles = {
     js: appDirectory.src + '/*.js',
-    scss: [appDirectory.assets + '/css/*.scss', appDirectory.assets + '/egg/*.css'],
+    scss: [appDirectory.assets + '/css/*.scss'],
     html: [appDirectory.src + '/*.html', appDirectory.assets + '/egg/*.html'],
-    vendorCSS: [appDirectory.bower + '/bootstrap/dist/css/bootstrap.min.css', appDirectory.bower + '/fontawesome/css/font-awesome.min.css'],
-    fontAwesome: appDirectory.bower + '/fontawesome/fonts/*',
-    vendorJS: [appDirectory.bower + '/angular/angular.min.js', appDirectory.bower + '/angular-animate/angular-animate.min.js',
-               appDirectory.bower + '/angular-egg/release/angular-egg.min.js']
+    vendorCSS: [appDirectory.npmDir + '/bootstrap/dist/css/bootstrap.min.css', appDirectory.npmDir + '/fontawesome/css/font-awesome.min.css',
+                appDirectory.assets + '/egg/*.css'],
+    fontAwesome: appDirectory.npmDir + '/fontawesome/fonts/*',
+    vendorJS: [appDirectory.npmDir + '/angular/angular.min.js', appDirectory.npmDir + '/angular-animate/angular-animate.min.js',
+               appDirectory.assets + '/egg/angular-egg.min.js']
 };
 
 // end: location of directories and files
