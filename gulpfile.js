@@ -34,11 +34,11 @@ var appFiles = {
     js: appDirectory.src + '/*.js',
     scss: [appDirectory.assets + '/css/*.scss'],
     html: [appDirectory.src + '/*.html', appDirectory.assets + '/egg/*.html'],
-    vendorCSS: [appDirectory.npmDir + '/bootstrap/dist/css/bootstrap.min.css', appDirectory.npmDir + '/fontawesome/css/font-awesome.min.css',
+    vendorCSS: [appDirectory.npmDir + '/bootstrap/dist/css/bootstrap.min.css', appDirectory.npmDir + '/font-awesome/css/font-awesome.min.css',
                 appDirectory.assets + '/egg/*.css'],
-    fontAwesome: appDirectory.npmDir + '/fontawesome/fonts/*',
+    fontAwesome: appDirectory.npmDir + '/font-awesome/fonts/*',
     vendorJS: [appDirectory.npmDir + '/angular/angular.min.js', appDirectory.npmDir + '/angular-animate/angular-animate.min.js',
-               appDirectory.assets + '/egg/angular-egg.min.js']
+               appDirectory.assets + '/**/*.js']
 };
 
 // end: location of directories and files

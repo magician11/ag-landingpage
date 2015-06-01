@@ -10,55 +10,9 @@ body {
     text-shadow: 1px 3px 8px #000;
 }
 
-section.container {
-    margin-top: 33px;
+.ag-content {
+    padding: 0;   
 }
-
-/* remove padding to look better on smartphones */
-.col-xs-12 {
-    padding: 0;
-}
-
-.jumbotron {
-    background-color: rgba(0,0,0,0.3);
-    padding-top: 44px;
-    margin-top: 22px;
-
-    a {
-        color: $primary-colour;
-    }
-
-    h1 {
-        font-size: 44px;   
-    }
-
-    p {
-        font-size: 18px;
-    }
-
-    h3 a, p a {
-        text-decoration: none;
-        color: $link-colour;
-    }
-
-    a:hover {
-        text-decoration: underline;
-        color: $primary-colour;
-        border-bottom: none;
-        text-shadow: 1px 1px 33px $primary-colour;
-    }
-}
-
-/* animate hovering over social media icons */
-.ag-social-network {
-    transition: all 0.3s linear;
-    display: inline-block;
-}
-
-.ag-social-network:hover {
-    transform: scale(1.1);
-}
-
 
 /* start: animate profile pic */
 /* ----------------------------------------------------------- */
@@ -66,7 +20,7 @@ section.container {
 /* flip image to show young Andrew :) */
 
 .ag-profile-pic-container {
-    height: 333px;
+    height: 290px;
     perspective: 555px;
     position: relative;
     margin: 0 auto;
@@ -119,3 +73,56 @@ section.container {
 }
 /* end: animate profile pic */
 /* ----------------------------------------------------------- */
+
+.jumbotron {
+    background-color: rgba(0,0,0,0.3);
+    padding-top: 44px;
+    margin-top: 22px;
+
+    a {
+        color: $primary-colour;
+    }
+
+    h1 {
+        font-size: 44px;   
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    h3 a, p a {
+        text-decoration: none;
+        color: $link-colour;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: $primary-colour;
+        border-bottom: none;
+        text-shadow: 1px 1px 33px $primary-colour;
+    }
+}
+
+/* animate hovering over social media icons */
+.ag-social-network {
+    transition: all 0.3s linear;
+    display: inline-block;
+}
+
+.ag-social-network:hover {
+    transform: scale(1.1);
+}
+
+/* style the clock */
+.ag-time {
+    margin: 18px;
+    
+    h4, p {
+        margin: 0;
+    }
+}
+
+.ag-clock {
+    font-size: 2.9em;
+}
