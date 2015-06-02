@@ -8,10 +8,11 @@ body {
     color: $primary-colour;
     font-family: $font-family-base;
     text-shadow: 1px 3px 8px #000;
+    text-align: center;
 }
 
-.ag-content {
-    padding: 0;   
+.ag-content .row {
+    padding: 17px;
 }
 
 /* start: animate profile pic */
@@ -115,9 +116,10 @@ body {
 }
 
 /* style the clock */
+/* ----------------------------------------------------------- */
 .ag-time {
     margin: 18px;
-    
+
     h4, p {
         margin: 0;
     }
@@ -125,4 +127,22 @@ body {
 
 .ag-clock {
     font-size: 2.9em;
+}
+/* end: style the clock */
+/* ----------------------------------------------------------- */
+
+@media (min-width: 768px) {
+    .ag-time {
+        margin: 0px;
+    }
+    
+    .ag-location {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .ag-content {
+        padding: 0;
+    }
 }
