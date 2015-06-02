@@ -10,8 +10,8 @@
 
         /* the profile image */
         /* ---------------------------- */
-        vm.profilePic = 'http://res.cloudinary.com/go-for-self/image/upload/c_scale,h_290/Andrew-Golightly-profile.jpg';
-        vm.profilePicBaby = 'http://res.cloudinary.com/go-for-self/image/upload/c_scale,h_290/c_crop,h_290,w_290/v1430585072/Andrew%20Meditating.jpg';
+        vm.profilePic = 'http://res.cloudinary.com/go-for-self/image/upload/c_scale,h_245/Andrew-Golightly-profile.jpg';
+        vm.profilePicBaby = 'http://res.cloudinary.com/go-for-self/image/upload/c_scale,h_245/c_crop,h_245,w_245/v1430585072/Andrew%20Meditating.jpg';
 
         /* todo add these details in this controller
         vm.agEgg = {
