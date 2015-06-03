@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/vendor.min.css">
         <link rel="stylesheet" href="css/ag.min.css">
         <link rel="shortcut icon" href="http://res.cloudinary.com/go-for-self/image/upload/yin-yang.png">
-        <link href='http://fonts.googleapis.com/css?family=Averia+Sans+Libre' rel='stylesheet' type='text/css'>
+        <link href="http://fonts.googleapis.com/css?family=Averia+Sans+Libre" rel="stylesheet" type="text/css">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -68,7 +68,7 @@
                         <div class="ag-contact-info">
                             <h4><a href="mailto:support@andrewgolightly.com" title="Email Andrew Golightly">support@andrewgolightly.com</a></h4>
                             <span ng-repeat="agSocialNetwork in ag.socialNetworks | filter:search" class="ag-social-network">
-                                <social-network agSocialNetwork='agSocialNetwork'></social-network>
+                                <social-network ag-social-network="agSocialNetwork"></social-network>
                             </span>
                         </div>
 

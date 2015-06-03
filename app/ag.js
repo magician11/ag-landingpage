@@ -38,11 +38,11 @@
             {icon: 'soundcloud', link: 'https://soundcloud.com/magician11', name: 'SoundCloud'}
         ];
         /* ---------------------------- */
-        
-                /* AG's clock */
+
+        /* AG's clock */
         /* ---------------------------- */
         vm.agClock = new Date();
-        
+
         $interval(function() {
             vm.agClock = new Date();
         }, 1000);

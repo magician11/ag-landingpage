@@ -14,6 +14,7 @@ var minifyCSS = require('gulp-minify-css');
 var autoprefix = require('gulp-autoprefixer');
 var clean = require('del');
 var bootlint = require('gulp-bootlint');
+var htmlhint = require('gulp-htmlhint');
 
 // end: setup gulp, plugins and variables
 // ===============================================================================
@@ -96,14 +97,24 @@ gulp.task('scripts', function() {
 // copy across our html files
 gulp.task('html', function() {
 
+    // check our index.html for everything
     gulp.src(appDirectory.src + '/index.html')
+        .pipe(htmlhint())
+        .pipe(htmlhint.reporter())
         .pipe(bootlint({
         disabledIds: ['W005'] // not using jQuery.. so ignore it
     }));
 
+    // check all our html files (less the index) for valid HTML only
+    gulp.src(appFiles.html.concat('!' + appDirectory.src + '/index.html'))
+        .pipe(htmlhint({
+        "doctype-first": false
+    }))
+        .pipe(htmlhint.reporter());
+
+    // now copy all the html files to our dist directory
     return gulp.src(appFiles.html)
         .pipe(gulp.dest(appDirectory.dist));
-
 });
 
 // end: build app into dist directory
