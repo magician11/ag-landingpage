@@ -23,15 +23,15 @@
     </head>
     <body ng-controller="AgCtrl as ag" ng-cloak>
         <div class="container">
-            
+
             <section data-ng-egg data-ng-model="ag.eggActivated" data-keycode="p,l,a,n,e,t,s">
                 <ng-include src="'planets.html'"></ng-include>
             </section>
-            
+
             <section class="row">
                 <div class="col-md-8 col-md-offset-2 ag-content">
                     <div class="jumbotron">
-                        
+
                         <div class="ag-profile-pic-container">
                             <div ng-show="ag.showProfilePic" class="ag-profile-pic">
                                 <div class="ag-profile-pic-side">
@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="row">
-                            
+
                             <div class="col-sm-6">
                                 <div class="ag-time">
                                     <h4>My current time is:</h4>
@@ -57,12 +57,12 @@
                                     <p>{{ag.agClock | date : 'EEEE d MMMM yyyy' : '-0600'}}</p>
                                 </div>    
                             </div>
-                            
+
                             <div class="col-sm-6 ag-location">
                                 <p>I'm currently in <a href="https://goo.gl/maps/Jn0T5">Colorado (USA)</a>.</p>
                                 <p>To find a time to chat for your timezone, <a href="http://www.worldtimebuddy.com/?pl=1&lid=5419384&h=5419384">click here</a>.</p>    
                             </div>
-                            
+
                         </div>
 
                         <div class="ag-contact-info">
@@ -71,12 +71,12 @@
                                 <social-network agSocialNetwork='agSocialNetwork'></social-network>
                             </span>
                         </div>
-                        
+
                     </div> <!-- .jumbotron -->
                 </div> <!-- .ag-content -->
 
             </section> <!-- .row -->
-            
+
         </div> <!-- .container -->
         <script src="js/vendor.min.js"></script>
         <script src="js/ag.min.js"></script>

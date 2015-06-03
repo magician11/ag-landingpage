@@ -13,6 +13,7 @@ var concat = require('gulp-concat');
 var minifyCSS = require('gulp-minify-css');
 var autoprefix = require('gulp-autoprefixer');
 var clean = require('del');
+var bootlint = require('gulp-bootlint');
 
 // end: setup gulp, plugins and variables
 // ===============================================================================
@@ -94,6 +95,11 @@ gulp.task('scripts', function() {
 
 // copy across our html files
 gulp.task('html', function() {
+
+    gulp.src(appDirectory.src + '/index.html')
+        .pipe(bootlint({
+        disabledIds: ['W005'] // not using jQuery.. so ignore it
+    }));
 
     return gulp.src(appFiles.html)
         .pipe(gulp.dest(appDirectory.dist));
