@@ -35,6 +35,7 @@
             {icon: 'twitter', link: 'http://twitter.com/AndrewGolightly', name: 'Twitter'},
             {icon: 'google-plus', link: 'https://plus.google.com/+AndrewGolightly/posts', name: 'Google+'},
             {icon: 'github', link: 'https://github.com/magician11/', name: 'GitHub'},
+            {icon: 'instagram', link: 'https://instagram.com/magician11/', name: 'Instagram'},
             {icon: 'soundcloud', link: 'https://soundcloud.com/magician11', name: 'SoundCloud'}
         ];
         /* ---------------------------- */
