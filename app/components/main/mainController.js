@@ -51,11 +51,10 @@
 
         /* Get the Instagram pics */
         /* ---------------------------- */
-        /*
         AGsInstagram.getLatest(function(data) {
             vm.instagramMedia = data;
+            console.log(vm.instagramMedia);
         });
-        */
     });
 
 }());
