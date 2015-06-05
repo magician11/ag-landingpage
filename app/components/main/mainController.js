@@ -2,10 +2,10 @@
 
     "use strict";
 
-    var agApp = angular.module('agApp', ['ngAnimate', 'ngEgg']);
+    var agApp = angular.module('agApp');
 
-    agApp.controller('AgCtrl', function($scope, $timeout, $interval) {
-
+    agApp.controller('MainCtrl', function($scope, $timeout, $interval, AGsInstagram) {
+        
         var vm = this;
 
         /* the profile image */
@@ -47,13 +47,15 @@
         $interval(function() {
             vm.agClock = new Date();
         }, 1000);
-    });
+        /* ---------------------------- */
 
-    agApp.directive('socialNetwork', function() {
-
-        return {
-            templateUrl: 'social-network.html'
-        };
+        /* Get the Instagram pics */
+        /* ---------------------------- */
+        /*
+        AGsInstagram.getLatest(function(data) {
+            vm.instagramMedia = data;
+        });
+        */
     });
 
 }());

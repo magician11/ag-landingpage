@@ -1,0 +1,56 @@
+<div class="container">
+
+    <section data-ng-egg data-ng-model="ag.eggActivated" data-keycode="p,l,a,n,e,t,s">
+        <ng-include src="'planets.html'"></ng-include>
+    </section>
+
+    <section class="row">
+        <div class="col-md-8 col-md-offset-2 ag-content">
+            <div class="jumbotron">
+
+                <div class="ag-profile-pic-container">
+                    <div ng-show="ag.showProfilePic" class="ag-profile-pic">
+                        <div class="ag-profile-pic-side">
+                            <img ng-src="{{ag.profilePic}}" class="img-thumbnail img-responsive">
+                        </div>
+                        <div class="ag-profile-pic-side ag-profile-pic-side-back">
+                            <img ng-src="{{ag.profilePicBaby}}" class="img-thumbnail img-responsive">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ag-title">
+                    <h1>Andrew Golightly</h1>
+                    <h3><a href="http://www.golightlyplus.com">web developer</a> and <a href="http://www.goforself.me">counsellor</a></h3>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-6">
+                        <div class="ag-time">
+                            <h4>My current time is:</h4>
+                            <div class="ag-clock">{{ag.agClock | date : 'h:mm a' : '-0600'}}</div>
+                            <p>{{ag.agClock | date : 'EEEE d MMMM yyyy' : '-0600'}}</p>
+                        </div>    
+                    </div>
+
+                    <div class="col-sm-6 ag-location">
+                        <p>I'm currently in <a href="https://goo.gl/maps/Jn0T5">Colorado (USA)</a>.</p>
+                        <p>To find a time to chat for your timezone, <a href="http://www.worldtimebuddy.com/?pl=1&lid=5419384&h=5419384">click here</a>.</p>    
+                    </div>
+
+                </div>
+
+                <div class="ag-contact-info">
+                    <h4><a href="mailto:support@andrewgolightly.com" title="Email Andrew Golightly">support@andrewgolightly.com</a></h4>
+                    <span ng-repeat="agSocialNetwork in ag.socialNetworks | filter:search" class="ag-social-network">
+                        <social-network ag-social-network="agSocialNetwork"></social-network>
+                    </span>
+                </div>
+
+            </div> <!-- .jumbotron -->
+        </div> <!-- .ag-content -->
+
+    </section> <!-- .row -->
+
+</div> <!-- .container -->
