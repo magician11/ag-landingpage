@@ -1,65 +1,41 @@
-<div class="container">
+<!-- The main image -->
+<section class="row ag-image">
+    <img src="http://res.cloudinary.com/go-for-self/image/upload/e_improve/v1433786317/selfie-at-Dustins-place.jpg">
+</section>
 
-    <section data-ng-egg data-ng-model="ag.eggActivated" data-keycode="p,l,a,n,e,t,s">
-        <ng-include src="'planets.html'"></ng-include>
-    </section>
+<section class="row ag-work">
+    <div class="small-12 columns text-center">
+        <p>I work as both a <a href="http://www.golightlyplus.com">web developer</a> and <a href="http://www.goforself.me">counsellor</a>.</p>
+    </div>
+</section>
 
-    <section class="row">
-        <div class="col-md-8 col-md-offset-2 ag-content">
-            <div class="jumbotron">
+<!-- Where I am -->
+<section class="row">
 
-                <div class="ag-profile-pic-container">
-                    <div ng-show="ag.showProfilePic" class="ag-profile-pic">
-                        <div class="ag-profile-pic-side">
-                            <img ng-src="{{ag.profilePic}}" class="img-thumbnail img-responsive">
-                        </div>
-                        <div class="ag-profile-pic-side ag-profile-pic-side-back">
-                            <img ng-src="{{ag.profilePicBaby}}" class="img-thumbnail img-responsive">
-                        </div>
-                    </div>
-                </div>
+    <h3><i class="fa fa-home"></i> Where I am in the world</h3>
 
-                <div class="ag-title">
-                    <h1>Andrew Golightly</h1>
-                    <h3><a href="http://www.golightlyplus.com">web developer</a> and <a href="http://www.goforself.me">counsellor</a></h3>
-                </div>
+    <div class="small-6 column">
+        <div>I'm in <a href="https://goo.gl/maps/wXaaC">Saskatoon (Canada)</a>, and it's currently {{ag.agClock | date : 'h:mm a on EEEE d MMMM yyyy' : '-0600'}} for me.</div>
+    </div>
 
-                <div class="row">
+    <div class="small-6 column">
+        <p>To find a time to chat for your timezone, <a href="http://www.worldtimebuddy.com/?pl=1&lid=6141256&h=6141256">click here</a>.</p>    
+    </div>
 
-                    <div class="col-sm-6">
-                        <div class="ag-time">
-                            <h4>My current time is:</h4>
-                            <div class="ag-clock">{{ag.agClock | date : 'h:mm a' : '-0600'}}</div>
-                            <p>{{ag.agClock | date : 'EEEE d MMMM yyyy' : '-0600'}}</p>
-                        </div>    
-                    </div>
+</section>
 
-                    <div class="col-sm-6 ag-location">
-                        <p>I'm currently in <a href="https://goo.gl/maps/Jn0T5">Colorado (USA)</a>.</p>
-                        <p>To find a time to chat for your timezone, <a href="http://www.worldtimebuddy.com/?pl=1&lid=5419384&h=5419384">click here</a>.</p>    
-                    </div>
+<!-- Recent Instagram images -->
+<section class="row">
 
-                </div>
+    <h3><i class="fa fa-camera"></i> Recent images</h3>
 
-                <h3>Recent pics</h3>
-                <div ng-repeat="agsInstagram in ag.instagramMedia">
-                    <a ng-href="{{agsInstagram.link}}">
-                        <img ng-src="{{agsInstagram.images.standard_resolution.url}}" class="img-thumbnail">
-                    </a>
-                    <p>{{agsInstagram.caption.text}}</p>
-                </div>
+    <ul class="medium-block-grid-3">
+        <li ng-repeat="agsInstagram in ag.instagramMedia">
+            <a ng-href="{{agsInstagram.link}}">
+                <img ng-src="{{agsInstagram.images.standard_resolution.url}}" class="img-thumbnail">
+            </a>
+            <p class="text-center">{{agsInstagram.caption.text}}</p>
+        </li>
+    </ul>
 
-                <footer class="ag-contact-info">
-                    <hr>
-                    <h4><a href="mailto:support@andrewgolightly.com" title="Email Andrew Golightly">support@andrewgolightly.com</a></h4>
-                    <span ng-repeat="agSocialNetwork in ag.socialNetworks | filter:search" class="ag-social-network">
-                        <social-network ag-social-network="agSocialNetwork"></social-network>
-                    </span>
-                </footer>
-
-            </div> <!-- .jumbotron -->
-        </div> <!-- .ag-content -->
-
-    </section> <!-- .row -->
-
-</div> <!-- .container -->
+</section>

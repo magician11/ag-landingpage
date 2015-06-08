@@ -7,7 +7,7 @@
     agApp.directive('socialNetwork', function() {
 
         return {
-            templateUrl: 'components/socialNetwork/socialNetworkView.html'
+            templateUrl: 'components/footer/socialNetworkView.html'
         };
     });
 })();

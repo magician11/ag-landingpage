@@ -13,7 +13,6 @@ var concat = require('gulp-concat');
 var minifyCSS = require('gulp-minify-css');
 var autoprefix = require('gulp-autoprefixer');
 var clean = require('del');
-var bootlint = require('gulp-bootlint');
 var htmlhint = require('gulp-htmlhint');
 
 // end: setup gulp, plugins and variables
@@ -36,7 +35,7 @@ var appFiles = {
     js: appDirectory.src + '/**/*.js',
     scss: [appDirectory.assets + '/css/*.scss'],
     html: [appDirectory.src + '/**/*.html', appDirectory.assets + '/egg/*.html'],
-    vendorCSS: [appDirectory.npmDir + '/bootstrap/dist/css/bootstrap.min.css', appDirectory.npmDir + '/font-awesome/css/font-awesome.min.css',
+    vendorCSS: [appDirectory.npmDir + '/foundation-sites/css/foundation.min.css', appDirectory.npmDir + '/font-awesome/css/font-awesome.min.css',
                 appDirectory.assets + '/egg/*.css'],
     fontAwesome: appDirectory.npmDir + '/font-awesome/fonts/*',
     vendorJS: [appDirectory.npmDir + '/angular/angular.min.js', appDirectory.npmDir + '/angular-animate/angular-animate.min.js',
@@ -101,11 +100,8 @@ gulp.task('html', function() {
     // check our index.html for everything
     gulp.src(appDirectory.src + '/index.html')
         .pipe(htmlhint())
-        .pipe(htmlhint.reporter())
-        .pipe(bootlint({
-        disabledIds: ['W005'] // not using jQuery.. so ignore it
-    }));
-
+        .pipe(htmlhint.reporter());
+    
     // check all our html files (less the index) for valid HTML only
     gulp.src(appFiles.html.concat('!' + appDirectory.src + '/index.html'))
         .pipe(htmlhint({
