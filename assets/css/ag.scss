@@ -23,6 +23,10 @@ body {
     font-family: $font-family-base;
 }
 
+.ag-section-heading {
+    margin-bottom: 0.8em;
+}
+
 /* animate hovering over social media icons */
 .ag-social-network {
     transition: all 0.3s linear;

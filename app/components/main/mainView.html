@@ -12,7 +12,7 @@
 <!-- Where I am -->
 <section class="row">
 
-    <h3><i class="fa fa-home"></i> Where I am in the world</h3>
+    <h3 class="ag-section-heading"><i class="fa fa-home"></i> Where I am in the world</h3>
 
     <div class="small-6 column">
         <div>I'm in <a href="https://goo.gl/maps/wXaaC">Saskatoon (Canada)</a>, and it's currently {{ag.agClock | date : 'h:mm a on EEEE d MMMM yyyy' : '-0600'}} for me.</div>
@@ -27,7 +27,7 @@
 <!-- Recent Instagram images -->
 <section class="row">
 
-    <h3><i class="fa fa-camera"></i> Recent images</h3>
+    <h3 class="ag-section-heading"><i class="fa fa-camera"></i> Recent images</h3>
 
     <ul class="medium-block-grid-3">
         <li ng-repeat="agsInstagram in ag.instagramMedia">
@@ -43,7 +43,7 @@
 <!-- Recent Go For Self articles -->
 <section class="row">
 
-    <h3><i class="fa fa-pencil"></i> Recent articles</h3>
+    <h3 class="ag-section-heading"><i class="fa fa-pencil"></i> Recent articles</h3>
 
     <ul class="medium-block-grid-3">
         <li ng-repeat="wpArticle in ag.wpFeed">

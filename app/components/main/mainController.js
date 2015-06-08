@@ -23,9 +23,9 @@
             vm.instagramMedia = data;
         });
 
-        /* Get the Instagram pics */
+        /* Get the latest articles from Go For Self */
         /* ---------------------------- */
-        WordPressFeed.getLatestPosts('http://www.goforself.me', function(data) {
+        WordPressFeed.getLatestPosts('http://www.goforself.me', 3, function(data) {
             vm.wpFeed = data;
         });
 

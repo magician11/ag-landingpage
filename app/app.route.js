@@ -4,7 +4,7 @@
 
     var agApp = angular.module('agApp');
 
-    agApp.config(function ($routeProvider) {
+    agApp.config(function ($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
             templateUrl: 'components/main/mainView.html',
@@ -13,6 +13,8 @@
             .otherwise({
             redirectTo: '/'
         });
+
+        $locationProvider.html5Mode(true);
     });
 
 }());
