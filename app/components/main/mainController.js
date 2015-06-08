@@ -4,8 +4,8 @@
 
     var agApp = angular.module('agApp');
 
-    agApp.controller('MainCtrl', function($interval, AGsInstagram) {
-        
+    agApp.controller('MainCtrl', function($interval, AGsInstagram, WordPressFeed) {
+
         var vm = this;
 
         /* AG's clock */
@@ -22,6 +22,13 @@
         AGsInstagram.getLatest(function(data) {
             vm.instagramMedia = data;
         });
+
+        /* Get the Instagram pics */
+        /* ---------------------------- */
+        WordPressFeed.getLatestPosts('http://www.goforself.me', function(data) {
+            vm.wpFeed = data;
+        });
+
     });
 
 }());
