@@ -45,11 +45,9 @@
 
     <h3 class="ag-section-heading"><i class="fa fa-pencil"></i> Recent articles</h3>
 
-    <ul class="medium-block-grid-3">
-        <li ng-repeat="wpArticle in ag.wpFeed">
-            <h4>{{wpArticle.title}}</h4>
-            <p>{{wpArticle.contentSnippet}} <a ng-href="{{wpArticle.link}}">read more</a></p>
-        </li>
-    </ul>
+    <div ng-repeat="wpArticle in ag.wpFeed" class="medium-4 column">
+        <h4>{{wpArticle.title}}</h4>
+        <p>{{wpArticle.contentSnippet}} <a ng-href="{{wpArticle.link}}">read more</a></p>
+    </div>
 
 </section>
