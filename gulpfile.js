@@ -14,6 +14,7 @@ var minifyCSS = require('gulp-minify-css');
 var autoprefix = require('gulp-autoprefixer');
 var clean = require('del');
 var htmlhint = require('gulp-htmlhint');
+var htmlmin = require('gulp-htmlmin');
 
 // end: setup gulp, plugins and variables
 // ===============================================================================
@@ -101,7 +102,7 @@ gulp.task('html', function() {
     gulp.src(appDirectory.src + '/index.html')
         .pipe(htmlhint())
         .pipe(htmlhint.reporter());
-    
+
     // check all our html files (less the index) for valid HTML only
     gulp.src(appFiles.html.concat('!' + appDirectory.src + '/index.html'))
         .pipe(htmlhint({
@@ -111,6 +112,10 @@ gulp.task('html', function() {
 
     // now copy all the html files to our dist directory
     return gulp.src(appFiles.html)
+        .pipe(htmlmin({
+        collapseWhitespace: true,
+        removeComments: true
+    }))
         .pipe(gulp.dest(appDirectory.dist));
 });
 

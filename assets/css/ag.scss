@@ -3,24 +3,25 @@
 // fonts
 $font-family-base: 'Open Sans', cursive ;
 
-// colour scheme
-$main-background-colour: #fff;
-
 /* end: set our global variables */
 /* ------------------------------------------ */
 
-body {
-    background-color: $main-background-colour;
-    font-family: $font-family-base;
+body, .ag-logo h1, .ag-logo h2 {
+    font-family: $font-family-base;    
 }
 
 .row {
     margin: 3em auto;
 }
 
-.ag-logo h1 {
-    font-size: 2.2em;
-    font-family: $font-family-base;
+.ag-logo {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.55em;
+    }
 }
 
 .ag-section-heading {
