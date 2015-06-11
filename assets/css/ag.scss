@@ -6,7 +6,7 @@ $font-family-base: 'Open Sans', cursive ;
 /* end: set our global variables */
 /* ------------------------------------------ */
 
-body, .ag-logo h1, .ag-logo h2 {
+body, .ag-logo h1, .ag-logo h2, .button {
     font-family: $font-family-base;    
 }
 
@@ -29,6 +29,7 @@ body, .ag-logo h1, .ag-logo h2 {
 }
 
 /* animate hovering over social media icons */
+/* ------------------------------------------ */
 .ag-social-network {
     transition: all 0.3s linear;
     display: inline-block;
@@ -37,3 +38,5 @@ body, .ag-logo h1, .ag-logo h2 {
 .ag-social-network:hover {
     transform: scale(1.1);
 }
+/* end: animating social media icons */
+/* ------------------------------------------ */

@@ -37,7 +37,7 @@ var appFiles = {
     scss: [appDirectory.assets + '/css/*.scss'],
     html: [appDirectory.src + '/**/*.html', appDirectory.assets + '/egg/*.html'],
     vendorCSS: [appDirectory.npmDir + '/foundation-sites/css/foundation.min.css', appDirectory.npmDir + '/font-awesome/css/font-awesome.min.css',
-                appDirectory.assets + '/egg/*.css'],
+                appDirectory.assets + '/**/*.css'],
     fontAwesome: appDirectory.npmDir + '/font-awesome/fonts/*',
     vendorJS: [appDirectory.npmDir + '/angular/angular.min.js', appDirectory.npmDir + '/angular-animate/angular-animate.min.js',
                appDirectory.assets + '/**/*.js', appDirectory.npmDir + '/angular-route/angular-route.min.js',
