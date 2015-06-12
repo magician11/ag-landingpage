@@ -9,8 +9,16 @@ $twitter-blue: #3498DB;
 /* end: set our global variables */
 /* ------------------------------------------ */
 
+
+/* main styling */
+/* ------------------------------------------ */
 body, h1, h2, h3, .button {
     font-family: $font-family-base;    
+}
+
+/* topbar */
+.top-bar a:hover {
+    text-decoration: none;
 }
 
 .button {
@@ -19,20 +27,29 @@ body, h1, h2, h3, .button {
     color: $twitter-blue;
 }
 
-.row {
-    margin: 3em auto;
+.button:hover {
+    background-color: $twitter-blue;
+    text-decoration: none;
 }
 
-.ag-logo {
+a {
+    color: $twitter-blue;
+}
 
-    h2 {
-        font-size: 1.55em;
-    }
+a:hover {
+    text-decoration: underline;
+    color: $twitter-blue;
+}
+
+.row {
+    margin: 3em auto;
 }
 
 .ag-section-heading {
     margin-bottom: 0.8em;
 }
+/* end: main styling */
+/* ------------------------------------------ */
 
 /* animate hovering over social media icons */
 /* ------------------------------------------ */
