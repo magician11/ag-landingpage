@@ -10,6 +10,10 @@
             templateUrl: 'components/main/mainView.html',
             controller: 'MainCtrl as ag'
         })
+            .when('/empath-world-map', {
+            templateUrl: 'components/empaths/empathWorldMapView.html',
+            controller: 'EmpathWorldMapCtrl as em'
+        })
             .otherwise({
             redirectTo: '/'
         });

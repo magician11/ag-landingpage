@@ -2,6 +2,6 @@
 
     "use strict";
 
-    var agApp = angular.module('agApp', ['ngAnimate', 'ngEgg', 'ngRoute', 'ngTouch']);
+    var agApp = angular.module('agApp', ['ngAnimate', 'ngEgg', 'ngRoute', 'ngTouch', 'mm.foundation']);
 
 }());
