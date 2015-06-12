@@ -16,6 +16,10 @@ body, h1, h2, h3, .button {
     font-family: $font-family-base;    
 }
 
+.ag-page-heading {
+    animation: fadeInDown 1.1s;
+}
+
 /* topbar */
 .top-bar a:hover {
     text-decoration: none;
