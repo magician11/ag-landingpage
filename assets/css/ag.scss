@@ -12,6 +12,19 @@ $twitter-blue: #3498DB;
 
 /* main styling */
 /* ------------------------------------------ */
+@media only screen and (min-width: 64.063em) { /* min-width 1025px, large screens */
+    body {
+        background-image: url(http://res.cloudinary.com/go-for-self/image/upload/e_improve/c_scale,w_1440/v1434987309/Saskatoon-weir.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+    }
+} 
+
+.row {
+    background-color: white;
+    padding: 1.1em;
+}
+
 body, h1, h2, h3, .button {
     font-family: $font-family-base;    
 }
