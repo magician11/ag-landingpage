@@ -8,13 +8,13 @@ var scss = require('gulp-sass');
 var webserver = require('gulp-webserver');
 var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
-var ngAnnotate = require('gulp-ng-annotate');
 var concat = require('gulp-concat');
 var minifyCSS = require('gulp-minify-css');
 var autoprefix = require('gulp-autoprefixer');
 var clean = require('del');
 var htmlhint = require('gulp-htmlhint');
 var htmlmin = require('gulp-htmlmin');
+var react = require('gulp-react');
 
 // end: setup gulp, plugins and variables
 // ===============================================================================
@@ -25,23 +25,19 @@ var htmlmin = require('gulp-htmlmin');
 
 // directories
 var appDirectory = {
-    src: 'app',
-    assets: 'assets',
+    src: 'src',
     dist: 'dist',
     npmDir: 'node_modules'
 };
 
 // files
 var appFiles = {
-    js: appDirectory.src + '/**/*.js',
-    scss: [appDirectory.assets + '/css/*.scss'],
-    html: [appDirectory.src + '/**/*.html', appDirectory.assets + '/egg/*.html'],
-    vendorCSS: [appDirectory.npmDir + '/foundation-sites/css/foundation.min.css', appDirectory.npmDir + '/font-awesome/css/font-awesome.min.css',
-                appDirectory.assets + '/**/*.css'],
+    js: appDirectory.src + '/js/*.jsx',
+    scss: [appDirectory.src + '/css/*.scss'],
+    html: [appDirectory.src + '/**/*.html'],
+    vendorCSS: [appDirectory.npmDir + '/foundation-sites/css/foundation.min.css', appDirectory.npmDir + '/font-awesome/css/font-awesome.min.css'],
     fontAwesome: appDirectory.npmDir + '/font-awesome/fonts/*',
-    vendorJS: [appDirectory.npmDir + '/angular/angular.min.js', appDirectory.npmDir + '/angular-animate/angular-animate.min.js',
-               appDirectory.assets + '/**/*.js', appDirectory.npmDir + '/angular-route/angular-route.min.js',
-               appDirectory.npmDir + '/angular-touch/angular-touch.min.js']
+    vendorJS: [appDirectory.npmDir + '/react/dist/react.min.js', appDirectory.npmDir + '/jquery/dist/jquery.min.js']
 };
 
 // end: location of directories and files
@@ -87,9 +83,9 @@ gulp.task('scss', function() {
 // quality check our JS, minify and copy to dist
 gulp.task('scripts', function() {
     return gulp.src(appFiles.js)
+        .pipe(react())
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
-        .pipe(ngAnnotate())
         .pipe(uglify())
         .pipe(concat('ag.min.js'))
         .pipe(gulp.dest(appDirectory.dist + '/js'));
@@ -103,19 +99,12 @@ gulp.task('html', function() {
         .pipe(htmlhint())
         .pipe(htmlhint.reporter());
 
-    // check all our html files (less the index) for valid HTML only
-    gulp.src(appFiles.html.concat('!' + appDirectory.src + '/index.html'))
-        .pipe(htmlhint({
-        "doctype-first": false
-    }))
-        .pipe(htmlhint.reporter());
-
     // now copy all the html files to our dist directory
     return gulp.src(appFiles.html)
         .pipe(htmlmin({
         collapseWhitespace: true,
         removeComments: true
-    }))
+    })) 
         .pipe(gulp.dest(appDirectory.dist));
 });
 
