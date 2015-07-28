@@ -25,19 +25,19 @@ var react = require('gulp-react');
 
 // directories
 var appDirectory = {
-    src: 'src',
-    dist: 'dist',
-    npmDir: 'node_modules'
+  src: 'src',
+  dist: 'dist',
+  npmDir: 'node_modules'
 };
 
 // files
 var appFiles = {
-    js: appDirectory.src + '/js/*.jsx',
-    scss: [appDirectory.src + '/css/*.scss'],
-    html: [appDirectory.src + '/**/*.html'],
-    vendorCSS: [appDirectory.npmDir + '/foundation-sites/css/foundation.min.css', appDirectory.npmDir + '/font-awesome/css/font-awesome.min.css'],
-    fontAwesome: appDirectory.npmDir + '/font-awesome/fonts/*',
-    vendorJS: [appDirectory.npmDir + '/react/dist/react.min.js', appDirectory.npmDir + '/jquery/dist/jquery.min.js']
+  js: appDirectory.src + '/js/*.jsx',
+  scss: [appDirectory.src + '/css/*.scss'],
+  html: [appDirectory.src + '/**/*.html'],
+  vendorCSS: [appDirectory.npmDir + '/foundation-sites/css/foundation.min.css', appDirectory.npmDir + '/font-awesome/css/font-awesome.min.css'],
+  fontAwesome: appDirectory.npmDir + '/font-awesome/fonts/*',
+  vendorJS: [appDirectory.npmDir + '/react/dist/react.min.js', appDirectory.npmDir + '/jquery/dist/jquery.min.js']
 };
 
 // end: location of directories and files
@@ -52,60 +52,60 @@ gulp.task('build-dist', ['vendor', 'scss', 'scripts', 'html']);
 // copy across vendor files
 gulp.task('vendor', function() {
 
-    // get all minified CSS files
-    gulp.src(appFiles.vendorCSS)
-        .pipe(concat('vendor.min.css'))
-        .pipe(gulp.dest(appDirectory.dist + '/css'));
+  // get all minified CSS files
+  gulp.src(appFiles.vendorCSS)
+  .pipe(concat('vendor.min.css'))
+  .pipe(gulp.dest(appDirectory.dist + '/css'));
 
-    // get fonts
-    gulp.src(appFiles.fontAwesome)
-        .pipe(gulp.dest(appDirectory.dist + '/fonts'));
+  // get fonts
+  gulp.src(appFiles.fontAwesome)
+  .pipe(gulp.dest(appDirectory.dist + '/fonts'));
 
-    // get all JS
-    gulp.src(appFiles.vendorJS)
-        .pipe(concat('vendor.min.js'))
-        .pipe(gulp.dest(appDirectory.dist + '/js'));
+  // get all JS
+  gulp.src(appFiles.vendorJS)
+  .pipe(concat('vendor.min.js'))
+  .pipe(gulp.dest(appDirectory.dist + '/js'));
 
 });
 
 // process our Sass and CSS
 gulp.task('scss', function() {
-    return gulp.src(appFiles.scss)
-        .pipe(scss({
-        errLogToConsole: true
-    }))
-        .pipe(autoprefix())
-        .pipe(minifyCSS())
-        .pipe(concat('ag.min.css'))
-        .pipe(gulp.dest(appDirectory.dist + '/css'));
+  return gulp.src(appFiles.scss)
+  .pipe(scss({
+    errLogToConsole: true
+  }))
+  .pipe(autoprefix())
+  .pipe(minifyCSS())
+  .pipe(concat('ag.min.css'))
+  .pipe(gulp.dest(appDirectory.dist + '/css'));
 });
 
 // quality check our JS, minify and copy to dist
 gulp.task('scripts', function() {
-    return gulp.src(appFiles.js)
-        .pipe(react())
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'))
-        //.pipe(uglify())
-        .pipe(concat('ag.min.js'))
-        .pipe(gulp.dest(appDirectory.dist + '/js'));
+  return gulp.src(appFiles.js)
+  .pipe(react())
+  .pipe(jshint())
+  .pipe(jshint.reporter('default'))
+  .pipe(uglify())
+  .pipe(concat('ag.min.js'))
+  .pipe(gulp.dest(appDirectory.dist + '/js'));
 });
 
 // copy across our html files
 gulp.task('html', function() {
 
-    // check our index.html for everything
-    gulp.src(appDirectory.src + '/index.html')
-        .pipe(htmlhint())
-        .pipe(htmlhint.reporter());
+  // check our index.html for everything
+  gulp.src(appDirectory.src + '/index.html')
+  .pipe(htmlhint())
+  .pipe(htmlhint.reporter());
 
-    // now copy all the html files to our dist directory
-    return gulp.src(appFiles.html)
-        .pipe(htmlmin({
-        collapseWhitespace: true,
-        removeComments: true
-    })) 
-        .pipe(gulp.dest(appDirectory.dist));
+  // now copy all the html files to our dist directory
+  return gulp.src(appFiles.html)
+  .pipe(htmlmin({
+    collapseWhitespace: true,
+    removeComments: true
+  }))
+  .pipe(gulp.dest(appDirectory.dist));
 });
 
 // end: build app into dist directory
@@ -117,22 +117,22 @@ gulp.task('html', function() {
 
 // setup our webserver
 gulp.task('webserver', ['build-dist'], function() {
-    gulp.src(appDirectory.dist)
-        .pipe(webserver({
-        livereload: true,
-        open: true
-    }));
+  gulp.src(appDirectory.dist)
+  .pipe(webserver({
+    livereload: true,
+    open: true
+  }));
 });
 
 gulp.task('clean', function(cb) {
-    clean([appDirectory.dist]);
+  clean([appDirectory.dist]);
 });
 
 // watch our files for changes
 gulp.task('watch', function() {
-    gulp.watch(appFiles.scss, ['scss']);
-    gulp.watch(appFiles.js, ['scripts']);
-    gulp.watch(appFiles.html, ['html']);
+  gulp.watch(appFiles.scss, ['scss']);
+  gulp.watch(appFiles.js, ['scripts']);
+  gulp.watch(appFiles.html, ['html']);
 });
 
 // run our tasks on running 'gulp' from the command line
