@@ -86,7 +86,7 @@ gulp.task('scripts', function() {
         .pipe(react())
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(concat('ag.min.js'))
         .pipe(gulp.dest(appDirectory.dist + '/js'));
 });

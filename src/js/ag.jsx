@@ -1,5 +1,7 @@
 /** @jsx React.DOM */
 
+/* main structure */
+/* -------------------------------------- */
 var AGsDynamicContent = React.createClass({
 
     render: function() {
@@ -14,6 +16,10 @@ var AGsDynamicContent = React.createClass({
     }
 });
 
+/* -------------------------------------- */
+
+/* where am I section */
+/* -------------------------------------- */
 var AGsLocation = React.createClass({
     getInitialState: function() {
         return {
@@ -65,14 +71,27 @@ var AGsLocation = React.createClass({
     }
 });
 
+/* -------------------------------------- */
+
+/* my instagram feed */
+/* -------------------------------------- */
+var AGsInstagramImg = React.createClass({
+
+    render: function() {
+        return (
+            <li>
+            <a href={this.props.instagramImgLink}>
+            <img src={this.props.instagramImgSrc} className="img-thumbnail" />
+            </a></li>
+        );
+    }
+});
+
 var AGsInstagram = React.createClass({
     getInitialState: function() {
         return {
             AGsMedia: []
         };
-    },
-    getLocalTime: function() {
-
     },
     componentDidMount: function() {
         var endPoint = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=540289959.29f38f4.3734ac00bcc349919709143960579038&callback=JSON_CALLBACK&count=3';
@@ -82,7 +101,6 @@ var AGsInstagram = React.createClass({
             dataType: 'jsonp',
             cache: false,
             success: function(data) {
-                console.log(data.data);
                 this.setState({AGsMedia: data.data});
             }.bind(this),
             error: function(xhr, status, err) {
@@ -94,60 +112,96 @@ var AGsInstagram = React.createClass({
 
         var mediaCells = [];
         this.state.AGsMedia.forEach(function(instagramImg) {
-            var imgCell = '<li><a href="' + instagramImg.link + '">' + 
-                '<img src="' + instagramImg.images.low_resolution.url + '" class="img-thumbnail">' +
-                '</a></li>';
-            mediaCells.push(imgCell);
+            mediaCells.push(<AGsInstagramImg instagramImgLink={instagramImg.link} instagramImgSrc={instagramImg.images.low_resolution.url} />);
+                            });
+
+            return (
+                <section className="row">
+
+                <h3 className="ag-section-heading"><i className="fa fa-camera"></i> Recent images</h3>
+
+                <ul className="medium-block-grid-3">
+                {mediaCells}
+                </ul>
+
+                </section>
+            );
+        }
+                                    });
+
+        /* -------------------------------------- */
+
+        /* my Go For Self blog feed */
+        /* -------------------------------------- */
+        var AGsGoForSelfPost = React.createClass({
+            render: function() {
+                return (
+                    <div className="medium-4 column">
+                    <h4>{this.props.articleTitle}</h4>
+                    <p>{this.props.articleSnippet} <a href={this.props.articleUrl}>read more</a></p>
+                    </div>
+                );
+            }
+        });
+        var AGsGoForSelfFeed = React.createClass({
+            getInitialState: function() {
+                return {
+                    AGsGFSposts: []
+                };
+            },
+            componentDidMount: function() {
+                var feedUrl = 'http://www.goforself.me/feed/';
+                var numPosts = 3;
+
+                $.ajax({
+                    url: 'http://ajax.googleapis.com/ajax/services/feed/load',
+                    dataType: 'jsonp',
+                    data: { v: '1.0', q: feedUrl, callback: 'JSON_CALLBACK', num: numPosts },
+                    cache: false,
+                    success: function(data) {
+                        this.setState({AGsGFSposts: data.responseData.feed.entries});
+                    }.bind(this),
+                    error: function(xhr, status, err) {
+                        console.error("Error");
+                    }.bind(this)
+                });
+            },
+            render: function() {
+                var goForSelfPosts = [];
+                this.state.AGsGFSposts.forEach(function(post) {
+                    console.log(post);
+                    goForSelfPosts.push(<AGsGoForSelfPost articleTitle={post.title} articleSnippet={post.contentSnippet} articleUrl={post.link} />);
+                });
+                return (
+                    <section className="row">
+
+                    <h3 className="ag-section-heading"><i className="fa fa-pencil"></i> Recent articles</h3>
+                    {goForSelfPosts}
+                    </section>
+                );
+            }
         });
 
-        return (
-            <section className="row">
+        /* -------------------------------------- */
 
-            <h3 className="ag-section-heading"><i className="fa fa-camera"></i> Recent images</h3>
+        /* one of my cloudinary songs */
+        /* -------------------------------------- */
 
-            <ul class="medium-block-grid-3">
-            {mediaCells}
-            </ul>
+        var AGsCloudinary = React.createClass({
+            render: function() {
+                return (
+                    <section className="row">
 
-            </section>
-        );
-    }
-});
+                    <h3 className="ag-section-heading"><i className="fa fa-music"></i> My musical creations</h3>
+                    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/205952023&amp;color=3498DB&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
 
-/*
-<li ng-repeat="agsInstagram in ag.instagramMedia">
-            <a ng-href="{{agsInstagram.link}}">
-            <img ng-src="{{agsInstagram.images.standard_resolution.url}}" class="img-thumbnail">
-            </a>
-            <p class="text-center">{{agsInstagram.caption.text}}</p>
-            </li>
-            */
+                    </section>
+                );
+            }
+        });
 
-var AGsGoForSelfFeed = React.createClass({
-    render: function() {
-        return (
-            <section className="row">
+        /* -------------------------------------- */
 
-            <h3 className="ag-section-heading"><i className="fa fa-pencil"></i> Recent articles</h3>
-
-            </section>
-        );
-    }
-});
-
-var AGsCloudinary = React.createClass({
-    render: function() {
-        return (
-            <section className="row">
-
-            <h3 className="ag-section-heading"><i className="fa fa-music"></i> My musical creations</h3>
-            <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/205952023&amp;color=3498DB&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
-
-            </section>
-        );
-    }
-});
-
-
-
-React.render(<AGsDynamicContent country="England" />, document.getElementById('ag-dynamic-content'));
+        /* rendering the main structure */
+        /* -------------------------------------- */
+        React.render(<AGsDynamicContent country="England" />, document.getElementById('ag-dynamic-content'));
