@@ -13,58 +13,58 @@ $twitter-blue: #3498DB;
 /* main styling */
 /* ------------------------------------------ */
 @media only screen and (min-width: 64.063em) { /* min-width 1025px, large screens */
-    body {
-        background-image: url(http://res.cloudinary.com/go-for-self/image/upload/c_scale,w_1440/e_improve/v1435209695/Mt%20Herman%20in%20Monument%20Colorado.jpg);
-        background-attachment: fixed;
-        background-size: cover;
-    }
-} 
+  body {
+    background-image: url(http://res.cloudinary.com/go-for-self/image/upload/c_scale,w_1440/e_improve/v1435209695/Mt%20Herman%20in%20Monument%20Colorado.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}
 
 .row {
-    background-color: white;
-    padding: 1.1em;
-    margin: 3em auto;
+  background-color: white;
+  padding: 1.1em;
+  margin: 3em auto;
 }
 
 body, h1, h2, h3, .button {
-    font-family: $font-family-base;    
+  font-family: $font-family-base;
 }
 
 .button {
-    background-color: transparent;
-    border: 3px solid $twitter-blue;
-    color: $twitter-blue;
+  background-color: transparent;
+  border: 3px solid $twitter-blue;
+  color: $twitter-blue;
 }
 
 .button:hover {
-    background-color: $twitter-blue;
-    text-decoration: none;
+  background-color: $twitter-blue;
+  text-decoration: none;
 }
 
 a {
-    color: $twitter-blue;
+  color: $twitter-blue;
 }
 
 a:hover {
-    text-decoration: underline;
-    color: $twitter-blue;
+  text-decoration: underline;
+  color: $twitter-blue;
 }
 
 .ag-section-heading {
-    margin-bottom: 0.8em;
+  margin-bottom: 0.8em;
 }
 /* end: main styling */
 /* ------------------------------------------ */
 
 /* animate hovering over social media icons */
 /* ------------------------------------------ */
-.ag-social-network {
-    transition: all 0.3s linear;
-    display: inline-block;
+.fa-stack {
+  transition: all 0.3s linear;
+  display: inline-block;
 }
 
-.ag-social-network:hover {
-    transform: scale(1.1);
+.fa-stack:hover {
+  transform: scale(1.1);
 }
 /* end: animating social media icons */
 /* ------------------------------------------ */
