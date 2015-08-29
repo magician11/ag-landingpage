@@ -236,4 +236,4 @@ var Footer = React.createClass({
 
 /* rendering the main structure */
 /* -------------------------------------- */
-React.render(<AGsDynamicContent country="England" />, document.getElementById('ag-dynamic-content'));
+React.render(<AGsDynamicContent country="Denmark" />, document.getElementById('ag-dynamic-content'));
