@@ -7,41 +7,11 @@ var AGsDynamicContent = React.createClass({
   render: function() {
     return (
       <div>
-        <AGsLocation country={this.props.country}/>
         <AGsInstagram />
         <AGsGoForSelfFeed />
-        <AGsCloudinary />
+        <AGsSoundCloud />
         <Footer />
       </div>
-    );
-  }
-});
-
-/* -------------------------------------- */
-
-/* where am I section */
-/* -------------------------------------- */
-var AGsLocation = React.createClass({
-  getMapUrl: function() {
-    return "http://www.google.com/maps/place/" + this.props.country;
-  },
-  render: function() {
-    return (
-      <section className="row">
-
-        <h3 className="ag-section-heading"><i className="fa fa-home"></i> Where I am in the world</h3>
-
-        <div className="small-6 column">
-          <div>
-            <p>I'm currently in <a href={this.getMapUrl()}>{this.props.country}</a>.</p>
-          </div>
-        </div>
-
-        <div className="small-6 column">
-          <p>To book a time to talk, <a href="https://goforself.youcanbook.me/">click here</a>.</p>
-        </div>
-
-      </section>
     );
   }
 });
@@ -160,10 +130,10 @@ var AGsGoForSelfFeed = React.createClass({
 
 /* -------------------------------------- */
 
-/* one of my cloudinary songs */
+/* one of my SoundCloud songs */
 /* -------------------------------------- */
 
-var AGsCloudinary = React.createClass({
+var AGsSoundCloud = React.createClass({
   render: function() {
     return (
       <section className="row">
@@ -227,6 +197,7 @@ var Footer = React.createClass({
         <div>
           {processedSocialNetworks}
         </div>
+        <p className="text-center">echo 22519 (E22519)</p>
       </footer>
     );
   }
@@ -236,4 +207,4 @@ var Footer = React.createClass({
 
 /* rendering the main structure */
 /* -------------------------------------- */
-React.render(<AGsDynamicContent country="Denmark" />, document.getElementById('ag-dynamic-content'));
+React.render(<AGsDynamicContent />, document.getElementById('ag-dynamic-content'));

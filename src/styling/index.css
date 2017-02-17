@@ -1,0 +1,15 @@
+html {
+  min-height: 100%;
+}
+
+body{
+  background: linear-gradient(45deg, skyblue, royalblue);
+}
+
+.ag-homepage {
+  font-family: 'Open Sans', cursive;
+  background: #fff;
+  padding: 3rem;
+  margin-top: 3rem;
+  border-radius: 4px;
+}
