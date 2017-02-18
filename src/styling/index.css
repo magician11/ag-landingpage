@@ -10,6 +10,9 @@ body{
   font-family: 'Open Sans', cursive;
   background: #fff;
   padding: 3rem;
-  margin-top: 3rem;
   border-radius: 4px;
+}
+
+.footer > div {
+  margin-bottom: 1rem;
 }
