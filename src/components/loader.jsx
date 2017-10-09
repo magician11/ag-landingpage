@@ -1,21 +1,29 @@
-import React from 'react';
-import { Alert } from 'react-bootstrap';
-import '../styling/loader.css';
+import React from "react";
+import { Alert } from "react-bootstrap";
+import "../styling/loader.css";
 
 const Loader = props => (
-  <div className="loader">
-    <Alert bsStyle="info">
-      {props.loaderStatus}...
-    </Alert>
-    <div className="spinner">
-      <div className="cube1" />
-      <div className="cube2" />
+  <Alert bsStyle="info">
+    <p>{props.loaderStatus}</p>
+    <div className="sk-circle">
+      <div className="sk-circle1 sk-child" />
+      <div className="sk-circle2 sk-child" />
+      <div className="sk-circle3 sk-child" />
+      <div className="sk-circle4 sk-child" />
+      <div className="sk-circle5 sk-child" />
+      <div className="sk-circle6 sk-child" />
+      <div className="sk-circle7 sk-child" />
+      <div className="sk-circle8 sk-child" />
+      <div className="sk-circle9 sk-child" />
+      <div className="sk-circle10 sk-child" />
+      <div className="sk-circle11 sk-child" />
+      <div className="sk-circle12 sk-child" />
     </div>
-  </div>
+  </Alert>
 );
 
 Loader.propTypes = {
-  loaderStatus: React.PropTypes.string.isRequired,
+  loaderStatus: React.PropTypes.string.isRequired
 };
 
 export default Loader;
