@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { Grid, Image, Row, Col, Panel } from "react-bootstrap";
+import {
+  Grid,
+  Thumbnail,
+  Image,
+  Row,
+  Col,
+  Panel,
+  Button
+} from "react-bootstrap";
 import fetchJsonp from "fetch-jsonp";
 import ReactGA from "react-ga";
 import "bootstrap/dist/css/bootstrap.css";
@@ -40,19 +48,48 @@ export default class App extends Component {
       instagramContent = <Loader loaderStatus="Loading..." />;
     } else {
       instagramContent = this.state.instagramMedia.map(instagramData => {
+        console.log(instagramData);
+        let instagramDescription = instagramData.caption.text.substring(0, 111);
+        if (instagramData.caption.text.length > 111) {
+          instagramDescription = instagramDescription.concat("...");
+        }
         return (
           <Col
-            xs={12}
-            sm={4}
+            sm={12}
+            md={4}
             key={instagramData.id}
             className="instagram-media"
           >
-            <Image
+            <Thumbnail
               src={instagramData.images.low_resolution.url}
-              responsive
-              rounded
-              className="center-block"
-            />
+              alt={instagramDescription}
+            >
+              <p>{instagramDescription}</p>
+              <Row>
+                <Col xs={6}>
+                  <Button bsStyle="primary" href={instagramData.link}>
+                    View on Instagram
+                  </Button>
+                </Col>
+                <Col xs={6}>
+                  <div>
+                    <a
+                      href={
+                        "http://maps.google.com/maps?q=" +
+                        instagramData.location.latitude +
+                        "," +
+                        instagramData.location.longitude
+                      }
+                    >
+                      <small>
+                        <i className="fa fa-map-marker" />{" "}
+                        {instagramData.location.name}
+                      </small>
+                    </a>
+                  </div>
+                </Col>
+              </Row>
+            </Thumbnail>
           </Col>
         );
       });
@@ -220,6 +257,7 @@ export default class App extends Component {
               src="https://www.google.com/maps/d/embed?mid=1TepY-cF-tV1zLyADZU3-B-qaVGc"
               width="100%"
               height="560px"
+              title="Andrew Golightly's world travels."
             />
           </Col>
         </Row>
@@ -228,6 +266,9 @@ export default class App extends Component {
           <Col xs={12} className="text-center">
             <i className="fa fa-copyright" aria-hidden="true" />{" "}
             {new Date().getFullYear()} Created by Andrew Golightly
+            <p>
+              <small>Echo 22519, we are a go for launch.</small>
+            </p>
           </Col>
         </Row>
       </Grid>

@@ -22,8 +22,4 @@ const Loader = props => (
   </Alert>
 );
 
-Loader.propTypes = {
-  loaderStatus: React.PropTypes.string.isRequired
-};
-
 export default Loader;
