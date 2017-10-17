@@ -267,7 +267,9 @@ export default class App extends Component {
             <i className="fa fa-copyright" aria-hidden="true" />{" "}
             {new Date().getFullYear()} Created by Andrew Golightly
             <p>
-              <small>Echo 22519, we are a go for launch.</small>
+              <small>
+                Echo 225194, we are a go for launch.<br />11:11
+              </small>
             </p>
           </Col>
         </Row>
