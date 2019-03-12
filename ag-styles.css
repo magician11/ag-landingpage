@@ -1,0 +1,11 @@
+:root {
+  --main-color: '#E22519';
+}
+
+body {
+  font-family: 'Open Sans';
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url('https://res.cloudinary.com/go-for-self/image/upload/v1509562442/sunrise.jpg');
+  height: 100%;
+}

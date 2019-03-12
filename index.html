@@ -1,144 +1,216 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Andrew Golightly</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="empath and web developer" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAEO0lEQVRoQ82aj5FPQQzHcxWgAlSAClABKuAqQAWogKuAqwAVcBWgAq4CVMB8djZv8tvb/9nHZebN3c3t28033ySbzb4jWSc3ROSuiNyOD3/zWPkhIjxf43MW/3ZrceScAUUfiMizjNK9UwPsjYh89ICaBQKAFyLyxGj7W0Q+R0vzU62vQ2CK9x7G50oG6TsReTUDaBTIVRF5nQA4FZEP8ellgXlgkacE6LmI/OqdcAQIlnwrIiiBnESXwPKzAkuwlwMDiONeA/UCgQWshxCguJQHgAWOYZgrB4ZxxA/sVKUFhEXei8i9OAsTMvFqqTHDWrgu7BRdrQYEEJ9iKiWQAUPa3EtexgRSmp+175fA1IDABHHxLbrSniBQvuViysyjHNISENznqYh4mCDVElu4DYIhcM1abJF+HzcoJ8lovG5Dc0BgATaQO5PuBIgvJsPpgvg4c5bA2LVreGCFuCkCgd7vUQFPYLMIO35O2MFROCewhwFagkFu2nhJGVFqSbGaqVqT5v7/M8OGjoMNlCjJn84F2Yi3ysICwR1gA2Ehzz6BxUr7wnmjLusFcqCnBaJsUOuQCj2yt2upbhsrCmQlGyzCfGSplBWyIHHgDXZr5OA9CoR0Rqo88DsPJREMadymX9bxpt9UrZCUFAixgRUvpDUnmJHXbcYceS8kD4CoW0G7VrYjE60a2ypRausEIKQwyvNafl+lbGme3v2j9P4xQLQcWZGtZgDPupRd6wQgHGxoGlBZ8vu/FJigwva69BlANNC9m+CIAVCcopQs5gXBuiH96k7aOmSNKJobi/Wvm+bDCgDbOnsA0RYRhSHK6j7iNUT1/ZVAKDJpEXmKzWmwFsi1kfZLsqJtTkwr43kRIOyM+O5M1kqbEx5dPO+ee9MvqfO/uFKCOqTf2Q1R3/NYctW7YUPUEmXkVAgLsHFZJJQoWjRyqiPge+SyuJTqGorGsDPGgO8p4+0hrAf03mPC0Tk9WPVUwHoIaynIAozVxh4bI3FFhlwpBwerkaOuFpk1ZQCB4mmvlnQNsJVgDo66KKXNh9Zxl75Tq+youWhvE66HtQvNB17qZaWnXVOrElbG2Faxlxp0uA87fU4uC5Bigw6lbUe81DLFx281eN/btegvwOwWg60mdq7+6gl20jnN6lywE2PptXVPPNgxzSa2DtbyA0UAY+9GetMvYBjL/QoCi8zrBdF9raBgtO2ZglkZrKNMFPe51tUbboQlUzA97jWqZGs8zFLjZe8RW+d0gp/9Re86aKLRNvL2oVpKp/+HCYrbqctQO5kt2WGDG1b8n07I3pKNiXTRFiN2PDsy7GiHnd9JBCvLDbseKRYWDq7YSlYbAaL7DOy0Liy9LLHZwfgun3BY5chcxMtqQABg3uHbslFGUkvr1z5Yb9bFqJRhGRcaBqAKeYGkLJEe7YdnKTiUth+e6edQXleUv/dw/I6DKcZrAAAAAElFTkSuQmCC"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      media="none"
+      onload="if(media!=='all')media='all'"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="ag-styles.css" />
+    <meta name="theme-color" content="#E22519" />
 
-<head>
-  <title>Andrew Golightly</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="empath and web developer">
-  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAEO0lEQVRoQ82aj5FPQQzHcxWgAlSAClABKuAqQAWogKuAqwAVcBWgAq4CVMB8djZv8tvb/9nHZebN3c3t28033ySbzb4jWSc3ROSuiNyOD3/zWPkhIjxf43MW/3ZrceScAUUfiMizjNK9UwPsjYh89ICaBQKAFyLyxGj7W0Q+R0vzU62vQ2CK9x7G50oG6TsReTUDaBTIVRF5nQA4FZEP8ellgXlgkacE6LmI/OqdcAQIlnwrIiiBnESXwPKzAkuwlwMDiONeA/UCgQWshxCguJQHgAWOYZgrB4ZxxA/sVKUFhEXei8i9OAsTMvFqqTHDWrgu7BRdrQYEEJ9iKiWQAUPa3EtexgRSmp+175fA1IDABHHxLbrSniBQvuViysyjHNISENznqYh4mCDVElu4DYIhcM1abJF+HzcoJ8lovG5Dc0BgATaQO5PuBIgvJsPpgvg4c5bA2LVreGCFuCkCgd7vUQFPYLMIO35O2MFROCewhwFagkFu2nhJGVFqSbGaqVqT5v7/M8OGjoMNlCjJn84F2Yi3ysICwR1gA2Ehzz6BxUr7wnmjLusFcqCnBaJsUOuQCj2yt2upbhsrCmQlGyzCfGSplBWyIHHgDXZr5OA9CoR0Rqo88DsPJREMadymX9bxpt9UrZCUFAixgRUvpDUnmJHXbcYceS8kD4CoW0G7VrYjE60a2ypRausEIKQwyvNafl+lbGme3v2j9P4xQLQcWZGtZgDPupRd6wQgHGxoGlBZ8vu/FJigwva69BlANNC9m+CIAVCcopQs5gXBuiH96k7aOmSNKJobi/Wvm+bDCgDbOnsA0RYRhSHK6j7iNUT1/ZVAKDJpEXmKzWmwFsi1kfZLsqJtTkwr43kRIOyM+O5M1kqbEx5dPO+ee9MvqfO/uFKCOqTf2Q1R3/NYctW7YUPUEmXkVAgLsHFZJJQoWjRyqiPge+SyuJTqGorGsDPGgO8p4+0hrAf03mPC0Tk9WPVUwHoIaynIAozVxh4bI3FFhlwpBwerkaOuFpk1ZQCB4mmvlnQNsJVgDo66KKXNh9Zxl75Tq+youWhvE66HtQvNB17qZaWnXVOrElbG2Faxlxp0uA87fU4uC5Bigw6lbUe81DLFx281eN/btegvwOwWg60mdq7+6gl20jnN6lywE2PptXVPPNgxzSa2DtbyA0UAY+9GetMvYBjL/QoCi8zrBdF9raBgtO2ZglkZrKNMFPe51tUbboQlUzA97jWqZGs8zFLjZe8RW+d0gp/9Re86aKLRNvL2oVpKp/+HCYrbqctQO5kt2WGDG1b8n07I3pKNiXTRFiN2PDsy7GiHnd9JBCvLDbseKRYWDq7YSlYbAaL7DOy0Liy9LLHZwfgun3BY5chcxMtqQABg3uHbslFGUkvr1z5Yb9bFqJRhGRcaBqAKeYGkLJEe7YdnKTiUth+e6edQXleUv/dw/I6DKcZrAAAAAElFTkSuQmCC" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" media="none" onload="if(media!=='all')media='all'">
-  <script src="https://use.fontawesome.com/b7c90acd03.js" async></script>
-  <meta name="theme-color" content="#00008A" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
-    crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <!-- Google Analytics -->
-  <script>
-    window.ga =
-      window.ga ||
-      function () {
-        (ga.q = ga.q || []).push(arguments);
-      };
-    ga.l = +new Date();
-    ga('create', 'UA-38230161-2', 'auto');
-    ga('send', 'pageview');
-  </script>
-  <script async src='https://www.google-analytics.com/analytics.js'></script>
-  <!-- End Google Analytics -->
+    <!-- Google Analytics -->
+    <script>
+      window.ga =
+        window.ga ||
+        function() {
+          (ga.q = ga.q || []).push(arguments);
+        };
+      ga.l = +new Date();
+      ga('create', 'UA-38230161-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    <!-- End Google Analytics -->
+  </head>
 
-  <style>
-    html {
-      height: 100%;
-    }
-
-    body {
-      font-family: 'Open Sans';
-      background-size: cover;
-      background-attachment: fixed;
-      background-image: url('https://res.cloudinary.com/go-for-self/image/upload/v1509562442/sunrise.jpg');
-      height: 100%;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container pt-5 pb-3">
-    <div class="row justify-content-center">
-      <div class="col col-sm-12 col-md-6">
-        <div class="card mb-5">
-          <img class="card-img-top" src="https://res.cloudinary.com/go-for-self/image/upload/c_scale,w_800/c_crop,g_face,h_800,w_800,y_0/e_auto_color/v1512888470/andrew-in-tesla.jpg"
-            alt="Andrew Golightly">
-          <div class="card-body">
-            <h4 class="card-title">Andrew Golightly</h4>
-            <p>empath and web developer</p>
+  <body>
+    <div class="container pt-5 pb-3">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mb-5">
+            <img
+              class="card-img-top"
+              src="https://res.cloudinary.com/go-for-self/image/upload/c_scale,w_800/c_crop,g_face,h_800,w_800,y_0/e_auto_color/v1512888470/andrew-in-tesla.jpg"
+              alt="Andrew Golightly"
+            />
+            <div class="card-body">
+              <h4 class="card-title">Andrew Golightly</h4>
+              <p>empath and web developer</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-5">
+            <div class="card-header">Life bio</div>
+            <div class="card-body">
+              <p>
+                Born and raised in South Africa till age 18, before moving to
+                New Zealand and becoming a citizen there.
+              </p>
+              <p>
+                First class computer science honours degree, majoring in
+                Artificial Intelligence.
+              </p>
+              <p>
+                Travelled to 38 countries:
+                <a
+                  href="https://drive.google.com/open?id=1TepY-cF-tV1zLyADZU3-B-qaVGc&usp=sharing"
+                  >view the map</a
+                >.
+              </p>
+              <p>
+                Qualified counsellor, and facilitator of
+                <a href="https://empath.community">an empath group</a>.
+              </p>
+              <p>
+                Fullstack JavaScript developer, specialist in Node.js and
+                ReactJS. Owner of the IT company
+                <a href="https://www.golightlyplus.com">Golightly+</a>.
+              </p>
+              <p>
+                Been working remotely since 2012 from various places on the
+                planet (with good WiFi).
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col col-sm-12 col-md-6">
-        <div class="card mb-5">
-          <div class="card-header">Life bio</div>
-          <div class="card-body">
-            <p>Born and raised in South Africa till age 18, before moving to New Zealand and becoming a citizen there.</p>
-            <p>First class computer science honours degree, majoring in Artificial Intelligence.</p>
-            <p>Travelled to 38 countries: <a href="https://drive.google.com/open?id=1TepY-cF-tV1zLyADZU3-B-qaVGc&usp=sharing">view
-                the map</a>.</p>
-            </p>
-            <p>Qualified counsellor, and facilitator of <a href="https://empath.community">an empath group</a>.</p>
-            <p>Fullstack JavaScript developer, specialist in Node.js and ReactJS. Owner of the IT company <a href="https://www.golightlyplus.com">Golightly+</a>.</p>
-            <p>Been working remotely since 2012 from various places on the planet (with
-              good WiFi).</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">How to connect with Andrew</div>
-          <div class="card-body">
-            <div class="list-group">
-              <a href="https://github.com/magician11/" class="list-group-item list-group-item-action" title="Andrew Golightly (magician11) on GitHub">
-                <div class="d-flex align-items-center">
-                  <div>
-                    <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-                  </div>
-                  <div class="ml-2">GitHub</div>
-                </div>
-              </a>
-              <a href="https://twitter.com/AndrewGolightly" class="list-group-item list-group-item-action" title="Andrew Golightly on Twitter">
-                <div class="d-flex align-items-center">
-                  <div>
-                    <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
-                  </div>
-                  <div class="ml-2">Twitter</div>
-                </div>
-              </a>
-              <a href="https://www.instagram.com/magician11/" class="list-group-item list-group-item-action" title="Andrew Golightly on Instagram">
-                <div class="d-flex align-items-center">
-                  <div>
-                    <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-                  </div>
-                  <div class="ml-2">Instagram</div>
-                </div>
-              </a>
-              <a href="https://soundcloud.com/magician11" class="list-group-item list-group-item-action" title="Andrew Golightly on SoundCloud">
-                <div class="d-flex align-items-center">
-                  <div>
-                    <i class="fa fa-soundcloud fa-2x" aria-hidden="true"></i>
-                  </div>
-                  <div class="ml-2">SoundCloud</div>
-                </div>
-              </a>
-              <a href="https://www.linkedin.com/in/andrewgolightly11" class="list-group-item list-group-item-action"
-                title="Andrew Golightly on LinkedIn">
-                <div class="d-flex align-items-center">
-                  <div>
-                    <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
-                  </div>
-                  <div class="ml-2">LinkedIn</div>
-                </div>
-              </a>
-              <a href="mailto:support@andrewgolightly.com" class="list-group-item list-group-item-action" title="Email Andrew Golightly">
-                <div class="d-flex align-items-center">
-                  <div>
-                    <i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>
-                  </div>
-                  <div class="ml-2">Email</div>
-                </div>
-              </a>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mb-5">
+            <div class="card-header">SoundCloud</div>
+            <div class="card-body">
+              <iframe
+                width="100%"
+                height="450"
+                scrolling="no"
+                frameborder="no"
+                allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/678624648&color=%23e22519&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+              ></iframe>
             </div>
           </div>
-          <div class="card-footer text-muted">
-            <div class="row">
-              <div class="col">
-                love is the answer
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">How to connect with Andrew</div>
+            <div class="card-body">
+              <div class="list-group">
+                <a
+                  href="https://github.com/magician11/"
+                  class="list-group-item list-group-item-action"
+                  title="Andrew Golightly (magician11) on GitHub"
+                >
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <div class="ml-2">GitHub</div>
+                  </div>
+                </a>
+                <a
+                  href="https://twitter.com/AndrewGolightly"
+                  class="list-group-item list-group-item-action"
+                  title="Andrew Golightly on Twitter"
+                >
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <div class="ml-2">Twitter</div>
+                  </div>
+                </a>
+                <a
+                  href="https://www.instagram.com/magician11/"
+                  class="list-group-item list-group-item-action"
+                  title="Andrew Golightly on Instagram"
+                >
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <div class="ml-2">Instagram</div>
+                  </div>
+                </a>
+                <a
+                  href="https://soundcloud.com/magician11"
+                  class="list-group-item list-group-item-action"
+                  title="Andrew Golightly on SoundCloud"
+                >
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <i class="fab fa-soundcloud fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <div class="ml-2">SoundCloud</div>
+                  </div>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/andrewgolightly11"
+                  class="list-group-item list-group-item-action"
+                  title="Andrew Golightly on LinkedIn"
+                >
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <div class="ml-2">LinkedIn</div>
+                  </div>
+                </a>
+                <a
+                  href="mailto:support@andrewgolightly.com"
+                  class="list-group-item list-group-item-action"
+                  title="Email Andrew Golightly"
+                >
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <div class="ml-2">Email</div>
+                  </div>
+                </a>
               </div>
-              <div class="col text-right">
-                E22519
+            </div>
+            <div class="card-footer text-muted">
+              <div class="row">
+                <div class="col">
+                  love is the answer
+                </div>
+                <div class="col text-right">
+                  E22519
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
